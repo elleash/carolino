@@ -14,4 +14,21 @@
     display: flex;
 
     aspect-ratio: 16 / 9;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory; // useless till we add scroll-snap-align: ;
+    scroll-behavior: smooth; // useless till we add scroll-snap-align: 
+    box-shadow: 0 1.5rem 3rem -.75rem hsla(0,0,0,.25);
+    border-radius: .5rem;
+}
+
+.slider img{
+    flex: 1 0 100%;
+    
+    scroll-snap-align: start;
+    object-fit: cover; // fill the parent's height and width, but maintain aspect-ratio. May lead to cropped images.
+
+}
+
+.slider nav{
+
 }
