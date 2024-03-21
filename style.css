@@ -6,4 +6,72 @@
 
 body {
   font-family: "Kosugi Maru", sans-serif;
+}
+body > section-1 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body > section-1 > nav-bar {
+  position: relative;
+  max-height: 10rem;
+  background-color: #d72f46;
+}
+body > section-1 > nav-bar > ul {
+  display: flex;
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+body > section-1 > nav-bar > ul > a {
+  color: white;
+  text-decoration: none;
+  padding: 0 4rem;
+  font-size: 1.3rem;
+}
+body > section-1 > nav-bar > ul > a > li {
+  padding: 2rem 3rem;
+  text-decoration: none;
+}
+body > section-1 > nav-bar > ul > a:hover {
+  background-color: #db4459;
+}
+body > section-1 > nav-bar > ul > #contact {
+  margin-left: auto;
+}
+body > section-1 > nav-bar > logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+body > section-1 > nav-bar > logo > #sticker-1 {
+  max-width: 30rem;
+}
+body > section-1 > nav-bar > logo > #sticker-2 {
+  max-width: 28rem;
+}
+body > section-1 > nav-bar > logo > #sticker-3 {
+  position: relative;
+  top: 2rem;
+  max-width: 8rem;
+}
+body > section-1 > nav-bar > logo > #sticker-4 {
+  position: relative;
+  top: 5.5rem;
+  max-width: 12rem;
+}
+body > section-1 > content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-image: url("img/paper-background.png");
+}
+body > section-1 > content > #content-text {
+  margin-left: 4.5rem;
+  font-size: 5rem;
+}
+body > section-1 > content > #food-bg {
+  max-width: 40rem;
 }/*# sourceMappingURL=style.css.map */

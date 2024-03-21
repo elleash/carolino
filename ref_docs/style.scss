@@ -30,7 +30,7 @@
     
     
     scroll-snap-align: start;
-    object-fit: cover; // fill the parent's height and width, but maintain aspect-ratio. May lead to cropped images.
+    object-fit: cover; // Fix distorted img by filling the parent's height and width, but maintain aspect-ratio. May lead to cropped images.
 
 }
 

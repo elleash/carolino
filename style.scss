@@ -7,4 +7,116 @@
 
 body{
     font-family: 'Kosugi Maru', sans-serif;
+
+    >section-1{
+        display: flex;
+        flex-direction: column;
+        min-height:100vh;
+        
+       
+        >nav-bar{
+        
+            position: relative;
+            max-height:10rem;
+     
+    
+            background-color: #d72f46;
+    
+            >ul{
+                display: flex;
+                list-style-type: none;
+                
+                padding-inline-start: 0;
+
+
+                >a {
+                    color: white;
+                    text-decoration: none;
+                    
+                    padding: 0 4rem;
+
+                    font-size: 1.3rem;
+                
+                    >li{
+                        padding: 2rem 3rem;
+            
+                        text-decoration: none;
+                    }
+
+                    
+
+                }
+
+                
+
+                >a:hover{
+                    background-color: #db4459;
+                }
+               
+               
+                >#contact{
+                    margin-left:auto;
+                }
+         
+            }
+    
+            >logo{
+                position: absolute;
+                top:0;
+                left: 50%;
+                
+                transform:translateX(-50%);
+                z-index:1;
+
+                >#sticker-1{
+                max-width:30rem;
+                
+                }
+
+                >#sticker-2{
+                    max-width:28rem;
+                }
+
+                >#sticker-3{
+                    position:relative;
+                    top:2rem;
+
+                    max-width: 8rem;
+                }
+                >#sticker-4{
+                    position: relative;
+                    top:5.5rem;
+                    
+                    max-width: 12rem;
+                }
+            }
+
+        }
+
+        >content{
+            flex: 1;
+
+            display:flex;
+            align-items: center;
+
+            
+
+            color: white;
+            background-image: url("img/paper-background.png");
+
+            >#content-text{
+                margin-left: 4.5rem;
+
+                font-size: 5rem;
+            }
+
+            >#food-bg{
+                max-width:40rem;
+            }
+        }
+    
+    }
+
 }
+
+
