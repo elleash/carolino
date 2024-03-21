@@ -65,13 +65,14 @@ body > section-1 > content {
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   color: white;
   background-image: url("img/paper-background.png");
 }
-body > section-1 > content > #content-text {
-  margin-left: 4.5rem;
-  font-size: 5rem;
+body > section-1 > content slogan {
+  max-width: 50rem;
 }
-body > section-1 > content > #food-bg {
-  max-width: 40rem;
+body > section-1 > content slogan > #content-text {
+  font-size: 5rem;
 }/*# sourceMappingURL=style.css.map */

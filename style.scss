@@ -98,21 +98,26 @@ body{
 
             display:flex;
             align-items: center;
-
+            justify-content: center;
             
+            
+            
+            text-align: center;
 
             color: white;
             background-image: url("img/paper-background.png");
 
-            >#content-text{
-                margin-left: 4.5rem;
+            slogan{
+                max-width:50rem;
+                >#content-text{
+                
 
-                font-size: 5rem;
-            }
+                    font-size: 5rem;
+               
+                }
 
-            >#food-bg{
-                max-width:40rem;
             }
+            
         }
     
     }
