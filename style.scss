@@ -3,125 +3,184 @@
 *{
     margin: 0;
     box-sizing: border-box;
+
+    
 }
 
-body{
-    font-family: 'Kosugi Maru', sans-serif;
+html{
+    scroll-behavior: smooth;
 
-    >section-1{
-        display: flex;
+    body{
+        display:flex;
         flex-direction: column;
-        min-height:100vh;
+
+        font-family: 'Kosugi Maru', sans-serif;
         
-       
-        >nav-bar{
         
-            position: relative;
-            max-height:10rem;
-     
-    
-            background-color: #d72f46;
-    
-            >ul{
-                display: flex;
-                list-style-type: none;
-                
-                padding-inline-start: 0;
-
-
-                >a {
-                    color: white;
-                    text-decoration: none;
-                    
-                    padding: 0 4rem;
-
-                    font-size: 1.3rem;
-                
-                    >li{
-                        padding: 2rem 3rem;
+        
+        >section-1{
+            display: flex;
+            flex-direction: column;
+            min-height:100vh;
             
+        
+            >nav-bar{
+            
+                position: relative;
+                max-height:10rem;
+        
+        
+                background-color: #d72f46;
+        
+                >ul{
+                    display: flex;
+                    list-style-type: none;
+                    
+                    padding-inline-start: 0;
+
+
+                    >a {
+                        color: white;
                         text-decoration: none;
+                        
+                        padding: 0 4rem;
+
+                        font-size: 1.3rem;
+                    
+                        >li{
+                            padding: 2rem 3rem;
+                
+                            text-decoration: none;
+                        }
+
+                        
+
                     }
 
                     
 
-                }
-
+                    >a:hover{
+                        background-color: #db4459;
+                    }
                 
-
-                >a:hover{
-                    background-color: #db4459;
-                }
-               
-               
-                >#contact{
-                    margin-left:auto;
-                }
-         
-            }
-    
-            >logo{
-                position: absolute;
-                top:0;
-                left: 50%;
                 
-                transform:translateX(-50%);
-                z-index:1;
-
-                >#sticker-1{
-                max-width:30rem;
-                
+                    >#contact{
+                        margin-left:auto;
+                    }
+            
                 }
-
-                >#sticker-2{
-                    max-width:28rem;
-                }
-
-                >#sticker-3{
-                    position:relative;
-                    top:2rem;
-
-                    max-width: 8rem;
-                }
-                >#sticker-4{
-                    position: relative;
-                    top:5.5rem;
+        
+                >logo{
+                    position: absolute;
+                    top:0;
+                    left: 50%;
                     
-                    max-width: 12rem;
-                }
-            }
-
-        }
-
-        >content{
-            flex: 1;
-
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            
-            
-            
-            text-align: center;
-
-            color: white;
-            background-image: url("img/paper-background.png");
-
-            slogan{
-                max-width:50rem;
-                >#content-text{
+                    //transform:translateX(-50%);
                 
+                    >img{
+                        position: absolute;
+                    
+                        transform:translateX(-50%);
+                        
+                    }
 
-                    font-size: 5rem;
-               
+                    >#sticker-1{
+                        max-width:30rem;
+                        
+                        }
+        
+                        >#sticker-2{
+                            max-width:28rem;
+                        }
+        
+                        >#sticker-3{
+                        
+                            top:2rem;
+        
+                            max-width: 8rem;
+                        }
+                        >#sticker-4{
+                            
+                            top:5.5rem;
+                            
+                            max-width: 12rem;
+                        }
+                    
                 }
 
             }
-            
+
+            >content{
+                flex: 1;
+
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                
+                
+                
+                text-align: center;
+
+                color: white;
+                background-image: url("img/paper-background.png");
+
+                slogan{
+                    max-width:50rem;
+                    >#content-text{
+                    
+
+                        font-size: 5rem;
+                
+                    }
+
+                }
+                
+            }
+        
         }
-    
+
+        >section-2{
+            display:flex;
+            flex-direction: column;
+
+            min-height: 100vh;
+            position: relative;
+
+            >#polygon-down{
+                position:absolute;
+                left:50%;
+                bottom:100%;
+                
+                // padding:10px;
+                // background-color: black;
+                >img{
+                    position:absolute;
+                    bottom: 0px;
+
+                    transform: translateX(-50%);
+                }
+                
+                >#polygon-2{
+                    max-width:6.5rem;
+                }
+                
+            }
+            
+            >content{
+                display: flex;
+
+                flex:1;
+
+                padding: 1rem 0;
+
+                background-color: #FF8A39;
+                
+                >red-rect{
+                    flex:1;
+                    background-color: #D72F46;
+                    //box-shadow: ;
+                }
+            }
+        }
     }
-
 }
-
-
