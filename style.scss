@@ -149,11 +149,11 @@ html{
         >section-2{
             display:flex;
             flex-direction: column;
-
+            
             min-height: 100vh;
             position: relative;
 
-            >#polygon-down{
+            >#polygon-up{
                 position:absolute;
                 left:50%;
                 bottom:100%;
@@ -225,6 +225,24 @@ html{
                         }
                         
                     }
+                }
+            }
+
+            #polygon-down{
+                position: absolute;
+                left: 50%;
+                top:100%;
+
+                //display:block;
+                img{
+                   // display:block;
+                    position: absolute;
+                    transform:translateX(-50%);
+                    top:0;
+                }
+
+                #polygon-4{
+                    max-width: 6.5rem;
                 }
             }
         }

@@ -94,17 +94,17 @@ html body > section-2 {
   min-height: 100vh;
   position: relative;
 }
-html body > section-2 > #polygon-down {
+html body > section-2 > #polygon-up {
   position: absolute;
   left: 50%;
   bottom: 100%;
 }
-html body > section-2 > #polygon-down > img {
+html body > section-2 > #polygon-up > img {
   position: absolute;
   bottom: 0px;
   transform: translateX(-50%);
 }
-html body > section-2 > #polygon-down > #polygon-2 {
+html body > section-2 > #polygon-up > #polygon-2 {
   max-width: 6.5rem;
 }
 html body > section-2 > orange-rect {
@@ -140,4 +140,17 @@ html body > section-2 > orange-rect > red-rect > content > carousel-img {
 html body > section-2 > orange-rect > red-rect > content > carousel-img > img {
   display: block;
   margin: 0 auto;
+}
+html body > section-2 #polygon-down {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+}
+html body > section-2 #polygon-down img {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+}
+html body > section-2 #polygon-down #polygon-4 {
+  max-width: 6.5rem;
 }/*# sourceMappingURL=style.css.map */
