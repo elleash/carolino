@@ -69,6 +69,9 @@ html > body > .section-one > .nav > ul > a {
 html > body > .section-one > .nav > ul > a > li {
   font-size: 1.2rem;
 }
+html > body > .section-one > .nav > ul > a:hover {
+  background-color: #754119;
+}
 html > body > .section-one > .nav > ul > #contact-us-link {
   margin-left: auto;
 }
