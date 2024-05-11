@@ -1,57 +1,590 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap');
 
-.kosugi-maru-regular {
-    font-family: "Kosugi Maru", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+@mixin theFavoritesContainerTemplate{
+    background-color: #662C00;
+
+    border: .5rem solid #662C00;
+    border-radius: 2rem;
+}
+
+@mixin dishImageTemplate{
+    max-width: 100%;
+
+    border-radius: inherit;
+
+    aspect-ratio: 1 / 1;
+}
+
+@mixin bakedGoodsContainerTemplate{
+    background-color: #D37C4D;
+
+    border: .5rem solid #D37C4D;
+    border-radius: 50%;
+}
+
+@mixin smallContainerSize{
+    max-width: 15rem;
+}
+
+@mixin bigContainerSize{
+    max-width: 31rem;
+}
+
+@mixin shadowTemplate{
+    // x-offset, y-offset, blur, spread, color, opacity
+    box-shadow: 0 22px 23px 0px rgba(0,0,0,.25);
+}
+
+@mixin oval-shape{
+    width: 45rem;
+    height:15rem;
+
+    border-radius: 50%;
+}
 
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
+img{
+    display:block;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 4rem;
+}
+
+h2{
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.overlay{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top:0;
+
+    width:100%;
+    height: 100%;
+    
+    background-color: rgba(0,0,0,.75);
+    color: #fff;
+
+    border-radius: inherit;
+    
+    opacity: 0;
+    transition: opacity .5s ease;
+
+}  
+
+.overlay:hover{
+    opacity: 1;
+    
+}
+
 html{
 
     font-family: 'Kosugi Maru', sans-serif;
+
+    scroll-behavior: smooth;
 
     > body{
         display: flex;
         flex-direction: column;
 
-        > section{
+        background-image: url("img/section-one/logo/paper-background.png");
+        background-size: cover;
 
-            display: flex;
+        >div{
+            display:flex;
             flex-direction: column;
+        }
 
-            > nav{
+        > .section-one{
+           
+            
+            > .nav{
+                position: relative;
                 background-color: #662C00;
+
                 > ul{
                     display: flex;
-
                     padding-inline-start: 0;
 
                     list-style-type: none;
                     > a{
-                        padding: 3rem;
+                        padding: 2rem;
 
                         color: white;
 
                         text-decoration: none;
 
                         > li{
-                            
+                            font-size: 1.2rem;
                         }
                     }
 
-                    > #contact-us{
+                    >#contact-us-link{
                         margin-left: auto;
+                    }
+                }
+
+                >.logo{
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                 
+                    >img{
+                        position: absolute;
+                        
+                        transform: translateX(-50%);
+                        
+                    }
+                    >#background{
+                        max-width: 32rem;
+                    }
+
+                    >#cover{
+                        max-width: 10rem;
+                    }
+
+                    >#mommy{
+                        top: 4.5rem;
+                        max-width: 13rem;
+                    }
+                    >#lyns{
+                        top: 7.5rem;
+                        max-width: 9rem;
+                    }
+                    >#kitchen{
+                        top: 10.5rem;
+                        max-width: 8rem;
+                    }
+                    >#plate{
+                        top: 12.5rem;
+                        max-width: 8rem;
+                    }
+                }
+
+                
+            }
+
+            >.content{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 7rem 0;
+                margin: auto 0;
+
+               
+                .sushi{
+                    position: relative;
+                    
+                    >#pin{
+                        position:absolute;
+                        bottom:95%;
+                        left:30%;
+                    }
+                    >#sushi{
+                        max-width: 20rem;
+    
+                    }
+                }
+                
+                .text{
+                    
+                    margin: 0 6rem;
+
+                    margin-top: 5rem;
+                    >#text{
+                      
+                        max-width: 15rem;
+    
+                        
+                    }
+                }
+
+
+               
+                .sapin{
+                    position: relative;
+
+                    >#pin{
+                        position:absolute;
+                        bottom:95%;
+
+                        left:50%;
+
+
+
+                    }
+                    >#sapin{
+                        max-width: 20rem;
+                    }    
+                }
+
+            }
+        }
+
+        >.section-two{
+            position:relative;
+
+            background-color: #FA9A68;
+            padding: .5rem 0;
+            
+            >#polygon-up{
+                position:absolute;
+                bottom:100%;
+                left:50%;
+                transform: translateX(-50%);
+
+                >img{
+                    max-width: 5rem;
+                }
+            }
+
+      
+
+            >.container{
+                @include shadowTemplate();
+
+                flex: 1;
+                display:flex;
+             
+                padding:.7rem;
+                background-color: #662C00;
+            
+                z-index: 1;
+
+                >.content{
+                    flex:1;
+                    display:flex;
+
+                    // top, left, bottom, right
+                    padding: 10rem 10rem 7rem 10rem;
+                    
+                    border: .3rem dashed #FA9A68;
+                    background-color: #F3E9D2;
+
+                    >.text{
+                        flex:1;
+
+
+                      
+
+                        >p{
+                            margin-top: 1.5rem;
+                            max-width: 35rem;
+                            font-size: 2.5rem;
+                        }
+                    }
+                    >.image{
+                        flex:1;
+                        display:flex;
+
+
+                        >img{
+                            margin-left: auto;
+                        }
+                    }
+                }
+
+            }
+
+            >#polygon-down{
+                position:absolute;
+                top:100%;
+                left:50%;
+                transform: translateX(-50%);
+
+              
+
+                >img{
+                    max-width: 5rem;
+                }
+
+            }
+        }
+
+        >.section-three{
+            position: relative;
+            
+            margin:15rem 0;
+
+            background-color: #D37C4D;
+            padding: .5rem;
+            
+            border-radius: 3rem;
+
+            >.oval-design{
+                position:absolute;
+                top:0;
+                left:50%;
+
+                >.oval-one{
+                    @include oval-shape();
+                    position: absolute;
+                    transform: translateX(-50%);
+                    top:-7rem;
+
+                   
+
+                    background-color: #C57243;
+                }
+
+                >.oval-two{
+                    @include oval-shape();
+                    position: absolute;
+                    transform: translateX(-50%);
+                    top:-6rem;
+
+                    
+                    background-color: #662C00;
+
+                    border: .15rem dashed #000;
+
+                }
+            }
+
+            >.container{
+                background-color: #662C00;
+
+                padding: .7rem;
+
+                border-radius: 3rem;
+
+                >.content{
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: #F3E9D2;
+
+                   
+                    padding: 3rem 3rem;
+                    border: .3rem dashed #D37C4D;
+                    border-radius: 2rem;
+
+                    font-family: "Legend Exa", sans-serif;
+                    text-align: center;
+                    
+
+                    >.the-favorites{
+                        margin-top: 10rem;
+                       
+                        display: flex;
+                        flex-direction: column;
+
+                        >.dishes{
+                            display: flex;
+                        
+                            margin-top: 3rem;
+
+                            justify-content: center;
+
+                            >.dish-left{
+                                display: flex;
+                                >.cajun-seafood{
+                                    display:flex;
+
+                                    position: relative;
+
+                                    max-width: 31rem;
+                                     
+                                    @include theFavoritesContainerTemplate();
+
+                                }
+                                    
+                                
+                            }
+
+                            >.dish-right{
+                                display:flex;
+
+                                flex-direction: column;
+                                justify-content: space-between;
+
+                                >.lasagna, >.macaroni-salad{
+                                    position: relative;
+                                    
+                                    display: flex;
+
+                                    margin: 0rem 1rem;
+    
+                                    max-width: 15rem;
+                                    
+                                    @include theFavoritesContainerTemplate();
+
+                                }
+
+                            }
+
+                            >.dish-left img, >.dish-right img{
+                                @include dishImageTemplate();
+                                
+                            }
+                    
+                            
+
+                        }
+
+                    }
+
+                    >.baked-goods{
+                        margin-top: 8rem;
+
+                        >.dishes{
+                            display:flex;
+
+                            justify-content: center;
+
+                            margin-top:3rem;
+
+                            >.dish-left{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+
+                                >.chocolate-chip-muffin, >.vanilla-muffin{
+                                    position: relative;
+                                    @include bakedGoodsContainerTemplate();
+
+                                    @include smallContainerSize();
+
+                                    
+                                }
+
+                                >.chocolate-chip-muffin >img, >.vanilla-muffin >img{
+                                    @include dishImageTemplate();
+                                }
+
+                            }
+
+                            >.dish-right{
+                                display:flex;
+
+                                
+
+                                >.strawberry-cheesecake{
+                                    position: relative;
+                                    @include bakedGoodsContainerTemplate();
+                                    @include bigContainerSize();
+
+                                    >img{
+                                        @include dishImageTemplate();
+                                    }
+                                }
+
+                            }
+
+                        }
+                    }
+
+                    >.full-menu{
+
+                        @include shadowTemplate();
+
+                        margin: 10rem 0 5rem 0;
+                       
+                        align-self: center;
+                        padding: 2rem;
+                        
+                        background-color: #C38134;
+                        
+                        border-radius: 2rem;
+
+                        cursor: pointer;
+
+                        >.content{
+                            display:flex;
+                            flex-direction: column;
+                            
+                            align-items: center;
+                            justify-content: center;
+
+                         
+                            border-radius: 2rem;
+                            background-color: #C98B42;
+                            padding: 1rem 2rem;
+
+                            color: #fff;
+
+                            >h2{
+                                margin: 2rem 0;
+                            }
+                        }
                     }
                 }
             }
         }
-    }
 
-}
+        >.section-four{
+            padding: 3rem;
+            align-self: center;
+            
+            >.contact-us{
+           
+                background-color: #D37C4D;
+
+                padding: .5rem;    
+            
+
+                >.container{
+                    background-color: #662C00;
+                    padding:.7rem;
+
+                    >.content{
+                        display: flex;
+                        flex-direction: column;
+
+                       
+
+                        padding: 5rem 10rem;
+
+                        background-color: #F3E9D2;
+
+
+                        border: .3rem dashed #D37C4D;
+
+                        font-family: "Legend Exa", sans-serif;
+
+                        >h1{
+                            align-self: center;
+                        }
+                        >h2{
+                            margin-top: 3rem;
+                        }
+
+                        input, textarea{
+                            margin-top:1rem;
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    
+                }
+            }
+
+            >.socials{
+                margin: 10rem 0;
+
+                display:flex;
+
+                justify-content: space-evenly;
+
+            }
+
+
+            
+        }
+    }   
+ }
+
 
 
