@@ -98,12 +98,13 @@ html{
         display: flex;
         flex-direction: column;
 
-        background-image: url("img/section-one/logo/paper-background.png");
+        background-image: url("img/paper-background.png");
         background-size: cover;
 
         >div{
             display:flex;
             flex-direction: column;
+            
         }
 
         > .section-one{
