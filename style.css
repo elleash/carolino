@@ -9,12 +9,12 @@ img {
   display: block;
 }
 
-h1 {
+.header-one {
   font-weight: 300;
   font-size: 4rem;
 }
 
-h2 {
+.header-two {
   font-weight: 300;
   font-size: 2rem;
 }
@@ -111,7 +111,6 @@ html > body > .section-one > .content {
   justify-content: center;
   align-items: center;
   padding: 7rem 0;
-  margin: auto 0;
 }
 html > body > .section-one > .content .sushi {
   position: relative;
@@ -143,9 +142,9 @@ html > body > .section-one > .content .sapin > #sapin {
   max-width: 20rem;
 }
 html > body > .section-two {
-  position: relative;
   background-color: #FA9A68;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
+  position: relative;
 }
 html > body > .section-two > #polygon-up {
   position: absolute;
@@ -158,33 +157,23 @@ html > body > .section-two > #polygon-up > img {
 }
 html > body > .section-two > .container {
   box-shadow: 0 22px 23px 0px rgba(0, 0, 0, 0.25);
-  flex: 1;
-  display: flex;
-  padding: 0.7rem;
   background-color: #662C00;
+  padding: 0.7rem;
+  display: flex;
   z-index: 1;
 }
 html > body > .section-two > .container > .content {
+  border: 0.3rem dashed #FA9A68;
   flex: 1;
   display: flex;
-  padding: 10rem 10rem 7rem 10rem;
-  border: 0.3rem dashed #FA9A68;
+  padding: 10rem;
   background-color: #F3E9D2;
+  justify-content: space-between;
 }
-html > body > .section-two > .container > .content > .text {
-  flex: 1;
-}
-html > body > .section-two > .container > .content > .text > p {
+html > body > .section-two > .container > .content > .text > .paragraph {
   margin-top: 1.5rem;
   max-width: 35rem;
   font-size: 2.5rem;
-}
-html > body > .section-two > .container > .content > .image {
-  flex: 1;
-  display: flex;
-}
-html > body > .section-two > .container > .content > .image > img {
-  margin-left: auto;
 }
 html > body > .section-two > #polygon-down {
   position: absolute;
@@ -196,11 +185,11 @@ html > body > .section-two > #polygon-down > img {
   max-width: 5rem;
 }
 html > body > .section-three {
-  position: relative;
-  margin: 15rem 0;
   background-color: #D37C4D;
   padding: 0.5rem;
   border-radius: 3rem;
+  position: relative;
+  margin: 15rem 0;
 }
 html > body > .section-three > .oval-design {
   position: absolute;
@@ -220,11 +209,11 @@ html > body > .section-three > .oval-design > .oval-two {
   width: 45rem;
   height: 15rem;
   border-radius: 50%;
+  border: 0.3rem dashed #000;
   position: absolute;
   transform: translateX(-50%);
   top: -6rem;
   background-color: #662C00;
-  border: 0.15rem dashed #000;
 }
 html > body > .section-three > .container {
   background-color: #662C00;
@@ -232,36 +221,30 @@ html > body > .section-three > .container {
   border-radius: 3rem;
 }
 html > body > .section-three > .container > .content {
+  border: 0.3rem dashed #D37C4D;
+  border-radius: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #F3E9D2;
-  padding: 3rem 3rem;
-  border: 0.3rem dashed #D37C4D;
-  border-radius: 2rem;
+  padding: 3rem;
   font-family: "Legend Exa", sans-serif;
-  text-align: center;
 }
 html > body > .section-three > .container > .content > .the-favorites {
   margin-top: 10rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes {
-  display: flex;
   margin-top: 3rem;
-  justify-content: center;
-}
-html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-left {
   display: flex;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-left > .cajun-seafood {
-  display: flex;
-  position: relative;
-  max-width: 31rem;
   background-color: #662C00;
-  border: 0.5rem solid #662C00;
-  border-radius: 2rem;
+  padding: 0.5rem;
+  border-radius: 3rem;
+  max-width: 31rem;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right {
   display: flex;
@@ -269,25 +252,29 @@ html > body > .section-three > .container > .content > .the-favorites > .dishes 
   justify-content: space-between;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right > .lasagna, html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right > .macaroni-salad {
-  position: relative;
-  display: flex;
-  margin: 0rem 1rem;
-  max-width: 15rem;
   background-color: #662C00;
-  border: 0.5rem solid #662C00;
-  border-radius: 2rem;
+  padding: 0.5rem;
+  border-radius: 3rem;
+  max-width: 15rem;
+  margin: 0rem 1rem;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-left img, html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right img {
   max-width: 100%;
   border-radius: inherit;
   aspect-ratio: 1/1;
 }
+html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-left .wrapper, html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right .wrapper {
+  border-radius: 3rem;
+  position: relative;
+}
 html > body > .section-three > .container > .content > .baked-goods {
   margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 html > body > .section-three > .container > .content > .baked-goods > .dishes {
   display: flex;
-  justify-content: center;
   margin-top: 3rem;
 }
 html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left {
@@ -296,53 +283,48 @@ html > body > .section-three > .container > .content > .baked-goods > .dishes > 
   justify-content: space-between;
 }
 html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .chocolate-chip-muffin, html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .vanilla-muffin {
-  position: relative;
   background-color: #D37C4D;
-  border: 0.5rem solid #D37C4D;
-  border-radius: 50%;
+  padding: 0.5rem;
   max-width: 15rem;
-}
-html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .chocolate-chip-muffin > img, html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .vanilla-muffin > img {
-  max-width: 100%;
-  border-radius: inherit;
-  aspect-ratio: 1/1;
-}
-html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-right {
-  display: flex;
+  border-radius: 50%;
+  position: relative;
 }
 html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-right > .strawberry-cheesecake {
-  position: relative;
   background-color: #D37C4D;
-  border: 0.5rem solid #D37C4D;
-  border-radius: 50%;
+  padding: 0.5rem;
   max-width: 31rem;
+  border-radius: 50%;
+  position: relative;
 }
-html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-right > .strawberry-cheesecake > img {
+html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left img, html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-right img {
   max-width: 100%;
   border-radius: inherit;
   aspect-ratio: 1/1;
+}
+html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left .wrapper, html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-right .wrapper {
+  border-radius: 50%;
+  position: relative;
 }
 html > body > .section-three > .container > .content > .full-menu {
   box-shadow: 0 22px 23px 0px rgba(0, 0, 0, 0.25);
-  margin: 10rem 0 5rem 0;
+  border-radius: 3rem;
   align-self: center;
-  padding: 2rem;
+  margin: 10rem 0 5rem 0;
+  padding: 1.5rem;
   background-color: #C38134;
-  border-radius: 2rem;
   cursor: pointer;
 }
 html > body > .section-three > .container > .content > .full-menu > .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 1rem 2rem;
   border-radius: 2rem;
   background-color: #C98B42;
-  padding: 1rem 2rem;
   color: #fff;
 }
-html > body > .section-three > .container > .content > .full-menu > .content > h2 {
-  margin: 2rem 0;
+html > body > .section-three > .container > .content > .full-menu > .content > p {
+  padding: 0.7rem 0;
 }
 html > body > .section-four {
   padding: 3rem;
@@ -357,18 +339,18 @@ html > body > .section-four > .contact-us > .container {
   padding: 0.7rem;
 }
 html > body > .section-four > .contact-us > .container > .content {
+  border: 0.3rem dashed #D37C4D;
   display: flex;
   flex-direction: column;
   padding: 5rem 10rem;
   background-color: #F3E9D2;
-  border: 0.3rem dashed #D37C4D;
   font-family: "Legend Exa", sans-serif;
 }
-html > body > .section-four > .contact-us > .container > .content > h1 {
+html > body > .section-four > .contact-us > .container > .content > .header-one {
   align-self: center;
 }
-html > body > .section-four > .contact-us > .container > .content > h2 {
-  margin-top: 3rem;
+html > body > .section-four > .contact-us > .container > .content > .header-two {
+  margin-top: 2rem;
 }
 html > body > .section-four > .contact-us > .container > .content input, html > body > .section-four > .contact-us > .container > .content textarea {
   margin-top: 1rem;
@@ -377,5 +359,5 @@ html > body > .section-four > .contact-us > .container > .content input, html > 
 html > body > .section-four > .socials {
   margin: 10rem 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.css.map */

@@ -1,34 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap');
 
-@mixin theFavoritesContainerTemplate{
-    background-color: #662C00;
-
-    border: .5rem solid #662C00;
-    border-radius: 2rem;
+// The reason I used `padding` instead of `border` is because `absolute`-positioned elements, when set to 100% top/bottom, are placed above/below the `relative`-positioned ancestor's CONTENT-BOX instead of BORDER-BOX.
+// So the added size of the `border` property will not affect the positioning of the `absolute` element whereas, per the site's design, we want it to be affected.
+// Now, these can have its drawbacks in other designs but as far as THIS DOCUMENT specifically, there isn't, so I chose to keep the `bg-color, padding` rules for inner borders for consistency as this problem is only for the outer border specifically.
+@mixin outerBorder($color){
+    background-color: $color;
+    padding:.5rem;
 }
 
-@mixin dishImageTemplate{
-    max-width: 100%;
-
-    border-radius: inherit;
-
-    aspect-ratio: 1 / 1;
+@mixin innerBorder($color){
+    background-color: $color;
+    padding:.7rem;
 }
 
-@mixin bakedGoodsContainerTemplate{
-    background-color: #D37C4D;
-
-    border: .5rem solid #D37C4D;
-    border-radius: 50%;
+@mixin dashedBorder($color){
+    border: .3rem dashed $color;
 }
 
-@mixin smallContainerSize{
-    max-width: 15rem;
-}
-
-@mixin bigContainerSize{
-    max-width: 31rem;
+@mixin polygonImageSize{
+    max-width: 5rem;
 }
 
 @mixin shadowTemplate{
@@ -43,6 +34,30 @@
     border-radius: 50%;
 }
 
+@mixin bigFoodContainerSize{
+    max-width: 31rem;
+}
+
+@mixin smallFoodContainerSize{
+    max-width: 15rem;
+}
+
+@mixin dishImageTemplate{
+    max-width: 100%;
+
+    border-radius: inherit;
+
+    aspect-ratio: 1 / 1;
+}
+
+@mixin squareBorderRadius{
+    border-radius: 3rem;
+}
+
+@mixin circleBorderRadius{
+    border-radius: 50%;
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -52,12 +67,12 @@ img{
     display:block;
 }
 
-h1{
+.header-one{
     font-weight: 300;
     font-size: 4rem;
 }
 
-h2{
+.header-two{
     font-weight: 300;
     font-size: 2rem;
 }
@@ -91,7 +106,6 @@ h2{
 html{
 
     font-family: 'Kosugi Maru', sans-serif;
-
     scroll-behavior: smooth;
 
     > body{
@@ -186,9 +200,7 @@ html{
                 align-items: center;
 
                 padding: 7rem 0;
-                margin: auto 0;
-
-               
+    
                 .sushi{
                     position: relative;
                     
@@ -239,10 +251,9 @@ html{
         }
 
         >.section-two{
-            position:relative;
+            @include outerBorder(#FA9A68);
 
-            background-color: #FA9A68;
-            padding: .5rem 0;
+            position:relative;
             
             >#polygon-up{
                 position:absolute;
@@ -251,7 +262,7 @@ html{
                 transform: translateX(-50%);
 
                 >img{
-                    max-width: 5rem;
+                    @include polygonImageSize();
                 }
             }
 
@@ -259,44 +270,31 @@ html{
 
             >.container{
                 @include shadowTemplate();
-
-                flex: 1;
+                @include innerBorder(#662C00);
+                
                 display:flex;
              
-                padding:.7rem;
-                background-color: #662C00;
-            
                 z-index: 1;
+              
 
                 >.content{
+                    @include dashedBorder(#FA9A68);
+
                     flex:1;
                     display:flex;
 
                     // top, left, bottom, right
-                    padding: 10rem 10rem 7rem 10rem;
+                    padding: 10rem;
                     
-                    border: .3rem dashed #FA9A68;
                     background-color: #F3E9D2;
+                    justify-content: space-between;
 
                     >.text{
-                        flex:1;
-
-
                       
-
-                        >p{
+                        >.paragraph{
                             margin-top: 1.5rem;
                             max-width: 35rem;
                             font-size: 2.5rem;
-                        }
-                    }
-                    >.image{
-                        flex:1;
-                        display:flex;
-
-
-                        >img{
-                            margin-left: auto;
                         }
                     }
                 }
@@ -312,22 +310,20 @@ html{
               
 
                 >img{
-                    max-width: 5rem;
+                    @include polygonImageSize();
                 }
 
             }
         }
 
         >.section-three{
+            @include outerBorder(#D37C4D);
+            @include squareBorderRadius();
+
             position: relative;
             
             margin:15rem 0;
-
-            background-color: #D37C4D;
-            padding: .5rem;
             
-            border-radius: 3rem;
-
             >.oval-design{
                 position:absolute;
                 top:0;
@@ -346,6 +342,7 @@ html{
 
                 >.oval-two{
                     @include oval-shape();
+                    @include dashedBorder(#000);
                     position: absolute;
                     transform: translateX(-50%);
                     top:-6rem;
@@ -353,31 +350,30 @@ html{
                     
                     background-color: #662C00;
 
-                    border: .15rem dashed #000;
+               
 
                 }
             }
 
             >.container{
-                background-color: #662C00;
-
-                padding: .7rem;
-
-                border-radius: 3rem;
+                @include innerBorder(#662C00);
+                @include squareBorderRadius();
 
                 >.content{
+                    @include dashedBorder(#D37C4D);
+                    @include squareBorderRadius();
+
                     display:flex;
                     flex-direction: column;
                     justify-content: center;
                     background-color: #F3E9D2;
 
                    
-                    padding: 3rem 3rem;
-                    border: .3rem dashed #D37C4D;
-                    border-radius: 2rem;
-
+                    padding: 3rem;
+                  
+        
                     font-family: "Legend Exa", sans-serif;
-                    text-align: center;
+         
                     
 
                     >.the-favorites{
@@ -385,26 +381,24 @@ html{
                        
                         display: flex;
                         flex-direction: column;
+                        align-items: center;
 
                         >.dishes{
-                            display: flex;
-                        
                             margin-top: 3rem;
 
-                            justify-content: center;
+                            display: flex;
 
                             >.dish-left{
-                                display: flex;
+
                                 >.cajun-seafood{
-                                    display:flex;
-
-                                    position: relative;
-
-                                    max-width: 31rem;
-                                     
-                                    @include theFavoritesContainerTemplate();
-
+                                    @include outerBorder(#662C00);
+                                    @include squareBorderRadius();
+                                    @include bigFoodContainerSize();
+                               
+                                    
                                 }
+
+                                
                                     
                                 
                             }
@@ -416,23 +410,26 @@ html{
                                 justify-content: space-between;
 
                                 >.lasagna, >.macaroni-salad{
-                                    position: relative;
-                                    
-                                    display: flex;
+                                    @include outerBorder(#662C00);
+                                    @include squareBorderRadius();
+                                    @include smallFoodContainerSize();
 
                                     margin: 0rem 1rem;
-    
-                                    max-width: 15rem;
-                                    
-                                    @include theFavoritesContainerTemplate();
-
+                                            
                                 }
+
 
                             }
 
                             >.dish-left img, >.dish-right img{
                                 @include dishImageTemplate();
                                 
+                            }
+
+                            >.dish-left .wrapper, >.dish-right .wrapper{
+                                @include squareBorderRadius();
+
+                                position:relative;
                             }
                     
                             
@@ -443,11 +440,14 @@ html{
 
                     >.baked-goods{
                         margin-top: 8rem;
+                   
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
 
                         >.dishes{
                             display:flex;
-
-                            justify-content: center;
 
                             margin-top:3rem;
 
@@ -457,53 +457,55 @@ html{
                                 justify-content: space-between;
 
                                 >.chocolate-chip-muffin, >.vanilla-muffin{
+                                    @include outerBorder(#D37C4D);
+                                    @include smallFoodContainerSize();
+                                    @include circleBorderRadius();
+
                                     position: relative;
-                                    @include bakedGoodsContainerTemplate();
-
-                                    @include smallContainerSize();
-
+                                    
                                     
                                 }
 
-                                >.chocolate-chip-muffin >img, >.vanilla-muffin >img{
-                                    @include dishImageTemplate();
+                              
+                            }
+
+                            >.dish-right{
+                            
+                                >.strawberry-cheesecake{
+                                    @include outerBorder(#D37C4D);
+                                    @include bigFoodContainerSize();
+                                    @include circleBorderRadius();
+
+                                    position: relative;  
                                 }
 
                             }
 
-                            >.dish-right{
-                                display:flex;
+                            >.dish-left img, >.dish-right img{
+                                @include dishImageTemplate();
+                            }
 
-                                
+                            >.dish-left .wrapper, >.dish-right .wrapper{
+                                @include circleBorderRadius();
 
-                                >.strawberry-cheesecake{
-                                    position: relative;
-                                    @include bakedGoodsContainerTemplate();
-                                    @include bigContainerSize();
-
-                                    >img{
-                                        @include dishImageTemplate();
-                                    }
-                                }
-
+                                position:relative;
+                      
                             }
 
                         }
                     }
 
                     >.full-menu{
-
                         @include shadowTemplate();
+                        @include squareBorderRadius();
+
+                        align-self: center;
 
                         margin: 10rem 0 5rem 0;
-                       
-                        align-self: center;
-                        padding: 2rem;
+                        padding: 1.5rem;
                         
                         background-color: #C38134;
                         
-                        border-radius: 2rem;
-
                         cursor: pointer;
 
                         >.content{
@@ -511,18 +513,18 @@ html{
                             flex-direction: column;
                             
                             align-items: center;
-                            justify-content: center;
 
-                         
+                            padding: 1rem 2rem;
+    
                             border-radius: 2rem;
                             background-color: #C98B42;
-                            padding: 1rem 2rem;
-
+                            
                             color: #fff;
 
-                            >h2{
-                                margin: 2rem 0;
+                            >p{
+                                padding: .7rem 0;
                             }
+
                         }
                     }
                 }
@@ -535,35 +537,28 @@ html{
             
             >.contact-us{
            
-                background-color: #D37C4D;
-
-                padding: .5rem;    
+                @include outerBorder(#D37C4D); 
             
-
                 >.container{
-                    background-color: #662C00;
-                    padding:.7rem;
+                    @include innerBorder(#662C00);
 
                     >.content{
+                        @include dashedBorder(#D37C4D);
+                        
                         display: flex;
                         flex-direction: column;
-
-                       
-
+                        
                         padding: 5rem 10rem;
 
                         background-color: #F3E9D2;
-
-
-                        border: .3rem dashed #D37C4D;
-
                         font-family: "Legend Exa", sans-serif;
 
-                        >h1{
+                        >.header-one{
                             align-self: center;
                         }
-                        >h2{
-                            margin-top: 3rem;
+
+                        >.header-two{
+                            margin-top: 2rem;
                         }
 
                         input, textarea{
@@ -581,7 +576,7 @@ html{
 
                 display:flex;
 
-                justify-content: space-evenly;
+                justify-content: space-between;
 
             }
 
