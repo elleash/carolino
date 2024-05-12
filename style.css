@@ -48,10 +48,6 @@ html > body {
   background-image: url("img/paper-background.png");
   background-size: cover;
 }
-html > body > div {
-  display: flex;
-  flex-direction: column;
-}
 html > body > .section-one > .nav {
   position: relative;
   background-color: #662C00;
@@ -65,6 +61,7 @@ html > body > .section-one > .nav > ul > a {
   padding: 2rem;
   color: white;
   text-decoration: none;
+  transition: background-color 0.2s ease-in;
 }
 html > body > .section-one > .nav > ul > a > li {
   font-size: 1.2rem;
@@ -112,33 +109,30 @@ html > body > .section-one > .content {
   align-items: center;
   padding: 7rem 0;
 }
-html > body > .section-one > .content .sushi {
+html > body > .section-one > .content > .sushi {
   position: relative;
 }
-html > body > .section-one > .content .sushi > #pin {
+html > body > .section-one > .content > .sushi > #pin {
   position: absolute;
   bottom: 95%;
   left: 30%;
 }
-html > body > .section-one > .content .sushi > #sushi {
-  max-width: 20rem;
-}
-html > body > .section-one > .content .text {
+html > body > .section-one > .content > .text {
   margin: 0 6rem;
   margin-top: 5rem;
 }
-html > body > .section-one > .content .text > #text {
+html > body > .section-one > .content > .text > img {
   max-width: 15rem;
 }
-html > body > .section-one > .content .sapin {
+html > body > .section-one > .content > .sapin {
   position: relative;
 }
-html > body > .section-one > .content .sapin > #pin {
+html > body > .section-one > .content > .sapin > #pin {
   position: absolute;
   bottom: 95%;
   left: 50%;
 }
-html > body > .section-one > .content .sapin > #sapin {
+html > body > .section-one > .content > .sushi img, html > body > .section-one > .content > .sapin img {
   max-width: 20rem;
 }
 html > body > .section-two {
@@ -201,8 +195,8 @@ html > body > .section-three > .oval-design > .oval-one {
   height: 15rem;
   border-radius: 50%;
   position: absolute;
-  transform: translateX(-50%);
   top: -7rem;
+  transform: translateX(-50%);
   background-color: #C57243;
 }
 html > body > .section-three > .oval-design > .oval-two {
@@ -211,8 +205,8 @@ html > body > .section-three > .oval-design > .oval-two {
   border-radius: 50%;
   border: 0.3rem dashed #000;
   position: absolute;
-  transform: translateX(-50%);
   top: -6rem;
+  transform: translateX(-50%);
   background-color: #662C00;
 }
 html > body > .section-three > .container {
@@ -231,14 +225,14 @@ html > body > .section-three > .container > .content {
   font-family: "Legend Exa", sans-serif;
 }
 html > body > .section-three > .container > .content > .the-favorites {
-  margin-top: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10rem;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes {
-  margin-top: 3rem;
   display: flex;
+  margin-top: 3rem;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-left > .cajun-seafood {
   background-color: #662C00;
@@ -327,8 +321,8 @@ html > body > .section-three > .container > .content > .full-menu > .content > p
   padding: 0.7rem 0;
 }
 html > body > .section-four {
-  padding: 3rem;
   align-self: center;
+  padding: 3rem;
 }
 html > body > .section-four > .contact-us {
   background-color: #D37C4D;

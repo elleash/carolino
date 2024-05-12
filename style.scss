@@ -95,12 +95,10 @@ img{
     
     opacity: 0;
     transition: opacity .5s ease;
-
 }  
 
 .overlay:hover{
     opacity: 1;
-    
 }
 
 html{
@@ -108,39 +106,36 @@ html{
     font-family: 'Kosugi Maru', sans-serif;
     scroll-behavior: smooth;
 
-    > body{
+    >body{
         display: flex;
         flex-direction: column;
 
         background-image: url("img/paper-background.png");
         background-size: cover;
 
-        >div{
-            display:flex;
-            flex-direction: column;
-            
-        }
-
-        > .section-one{
+        >.section-one{
            
-            
-            > .nav{
+            >.nav{
                 position: relative;
                 background-color: #662C00;
 
-                > ul{
+                >ul{
                     display: flex;
+
                     padding-inline-start: 0;
 
                     list-style-type: none;
-                    > a{
+
+                    >a{
                         padding: 2rem;
 
                         color: white;
 
                         text-decoration: none;
 
-                        > li{
+                        transition: background-color .2s ease-in;
+
+                        >li{
                             font-size: 1.2rem;
                         }
                     }
@@ -189,9 +184,7 @@ html{
                         top: 12.5rem;
                         max-width: 8rem;
                     }
-                }
-
-                
+                }         
             }
 
             >.content{
@@ -201,7 +194,7 @@ html{
 
                 padding: 7rem 0;
     
-                .sushi{
+                >.sushi{
                     position: relative;
                     
                     >#pin{
@@ -209,28 +202,19 @@ html{
                         bottom:95%;
                         left:30%;
                     }
-                    >#sushi{
-                        max-width: 20rem;
-    
-                    }
                 }
                 
-                .text{
-                    
+                >.text{
                     margin: 0 6rem;
-
                     margin-top: 5rem;
-                    >#text{
+
+                    >img{
                       
                         max-width: 15rem;
-    
-                        
                     }
                 }
-
-
-               
-                .sapin{
+     
+                >.sapin{
                     position: relative;
 
                     >#pin{
@@ -238,15 +222,12 @@ html{
                         bottom:95%;
 
                         left:50%;
-
-
-
-                    }
-                    >#sapin{
-                        max-width: 20rem;
                     }    
                 }
 
+                >.sushi img, >.sapin img{
+                    max-width: 20rem;
+                }
             }
         }
 
@@ -298,21 +279,18 @@ html{
                         }
                     }
                 }
-
             }
 
             >#polygon-down{
                 position:absolute;
                 top:100%;
                 left:50%;
-                transform: translateX(-50%);
 
-              
+                transform: translateX(-50%);
 
                 >img{
                     @include polygonImageSize();
                 }
-
             }
         }
 
@@ -331,27 +309,25 @@ html{
 
                 >.oval-one{
                     @include oval-shape();
+
                     position: absolute;
-                    transform: translateX(-50%);
                     top:-7rem;
 
-                   
-
+                    transform: translateX(-50%);
+                    
                     background-color: #C57243;
                 }
 
                 >.oval-two{
                     @include oval-shape();
                     @include dashedBorder(#000);
+
                     position: absolute;
-                    transform: translateX(-50%);
                     top:-6rem;
 
+                    transform: translateX(-50%);
                     
                     background-color: #662C00;
-
-               
-
                 }
             }
 
@@ -366,27 +342,25 @@ html{
                     display:flex;
                     flex-direction: column;
                     justify-content: center;
+
                     background-color: #F3E9D2;
 
-                   
                     padding: 3rem;
                   
-        
                     font-family: "Legend Exa", sans-serif;
          
-                    
-
                     >.the-favorites{
-                        margin-top: 10rem;
-                       
+                    
                         display: flex;
                         flex-direction: column;
                         align-items: center;
 
-                        >.dishes{
-                            margin-top: 3rem;
+                        margin-top: 10rem;
 
+                        >.dishes{
                             display: flex;
+
+                            margin-top: 3rem;
 
                             >.dish-left{
 
@@ -394,18 +368,12 @@ html{
                                     @include outerBorder(#662C00);
                                     @include squareBorderRadius();
                                     @include bigFoodContainerSize();
-                               
-                                    
+                                   
                                 }
-
-                                
-                                    
-                                
                             }
 
                             >.dish-right{
                                 display:flex;
-
                                 flex-direction: column;
                                 justify-content: space-between;
 
@@ -417,13 +385,10 @@ html{
                                     margin: 0rem 1rem;
                                             
                                 }
-
-
                             }
 
                             >.dish-left img, >.dish-right img{
-                                @include dishImageTemplate();
-                                
+                                @include dishImageTemplate();     
                             }
 
                             >.dish-left .wrapper, >.dish-right .wrapper{
@@ -435,7 +400,6 @@ html{
                             
 
                         }
-
                     }
 
                     >.baked-goods{
@@ -461,12 +425,8 @@ html{
                                     @include smallFoodContainerSize();
                                     @include circleBorderRadius();
 
-                                    position: relative;
-                                    
-                                    
-                                }
-
-                              
+                                    position: relative;         
+                                } 
                             }
 
                             >.dish-right{
@@ -478,7 +438,6 @@ html{
 
                                     position: relative;  
                                 }
-
                             }
 
                             >.dish-left img, >.dish-right img{
@@ -489,7 +448,6 @@ html{
                                 @include circleBorderRadius();
 
                                 position:relative;
-                      
                             }
 
                         }
@@ -524,7 +482,6 @@ html{
                             >p{
                                 padding: .7rem 0;
                             }
-
                         }
                     }
                 }
@@ -532,11 +489,11 @@ html{
         }
 
         >.section-four{
-            padding: 3rem;
             align-self: center;
+
+            padding: 3rem;
             
             >.contact-us{
-           
                 @include outerBorder(#D37C4D); 
             
                 >.container{
@@ -565,9 +522,7 @@ html{
                             margin-top:1rem;
                             font-size: 1.5rem;
                         }
-                    }
-
-                    
+                    }   
                 }
             }
 
@@ -575,13 +530,8 @@ html{
                 margin: 10rem 0;
 
                 display:flex;
-
                 justify-content: space-between;
-
-            }
-
-
-            
+            }     
         }
     }   
  }
