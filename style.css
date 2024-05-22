@@ -81,27 +81,8 @@ html > body > .section-one > .nav > .logo > img {
   position: absolute;
   transform: translateX(-50%);
 }
-html > body > .section-one > .nav > .logo > #background {
+html > body > .section-one > .nav > .logo > #logo {
   max-width: 32rem;
-}
-html > body > .section-one > .nav > .logo > #cover {
-  max-width: 10rem;
-}
-html > body > .section-one > .nav > .logo > #mommy {
-  top: 4.5rem;
-  max-width: 13rem;
-}
-html > body > .section-one > .nav > .logo > #lyns {
-  top: 7.5rem;
-  max-width: 9rem;
-}
-html > body > .section-one > .nav > .logo > #kitchen {
-  top: 10.5rem;
-  max-width: 8rem;
-}
-html > body > .section-one > .nav > .logo > #plate {
-  top: 12.5rem;
-  max-width: 8rem;
 }
 html > body > .section-one > .content {
   display: flex;
