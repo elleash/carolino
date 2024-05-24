@@ -98,6 +98,7 @@ html > body > .section-one > .content > .sushi > #pin {
   position: absolute;
   bottom: 95%;
   left: 30%;
+  z-index: 1;
 }
 html > body > .section-one > .content > .sushi > .revealhoriz {
   position: relative;
@@ -142,6 +143,7 @@ html > body > .section-one > .content > .sapin > #pin {
   position: absolute;
   bottom: 95%;
   left: 50%;
+  z-index: 1;
 }
 html > body > .section-one > .content > .sapin > .revealhoriz {
   position: relative;

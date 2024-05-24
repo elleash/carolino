@@ -183,6 +183,8 @@ html{
                         position:absolute;
                         bottom:95%;
                         left:30%;
+
+                        z-index: 1;
                     }
 
                     >.revealhoriz{
@@ -233,8 +235,9 @@ html{
                     >#pin{
                         position:absolute;
                         bottom:95%;
-
                         left:50%;
+
+                        z-index: 1;
                     }
                     
                     >.revealhoriz{
