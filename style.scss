@@ -278,6 +278,8 @@ html{
             >.container{
                 @include shadowTemplate();
                 @include innerBorder(#662C00);
+
+                position: relative;
                 
                 display:flex;
              
