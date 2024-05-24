@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lemon&display=swap");
 * {
   margin: 0;
   box-sizing: border-box;
@@ -98,12 +99,41 @@ html > body > .section-one > .content > .sushi > #pin {
   bottom: 95%;
   left: 30%;
 }
-html > body > .section-one > .content > .text {
-  margin: 0 6rem;
-  margin-top: 5rem;
+html > body > .section-one > .content > .sushi > .revealhoriz {
+  position: relative;
+  /* lifts up the cards */
+  transform: translateX(-180px);
+  opacity: 0;
+  transition: all 2s ease;
 }
-html > body > .section-one > .content > .text > img {
-  max-width: 15rem;
+html > body > .section-one > .content > .sushi .revealhoriz.show {
+  transform: translateY(0px);
+  opacity: 1;
+}
+html > body > .section-one > .content > .text {
+  margin: 10rem 6rem;
+  text-align: center;
+  /* activates the javascript code */
+}
+html > body > .section-one > .content > .text > #from-kitch {
+  font-family: "Lexend Exa", sans-serif;
+  font-size: 3.5em;
+  color: white;
+}
+html > body > .section-one > .content > .text > #to-yours {
+  font-family: "Lemon", sans-serif;
+  font-size: 3.5em;
+  color: #662C00;
+}
+html > body > .section-one > .content > .text > .revealvert {
+  position: relative;
+  transform: translateY(-180px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+html > body > .section-one > .content > .text .revealvert.show {
+  transform: translateY(0px);
+  opacity: 1;
 }
 html > body > .section-one > .content > .sapin {
   position: relative;
@@ -113,12 +143,23 @@ html > body > .section-one > .content > .sapin > #pin {
   bottom: 95%;
   left: 50%;
 }
+html > body > .section-one > .content > .sapin > .revealhoriz {
+  position: relative;
+  /* lifts up the cards */
+  transform: translateX(-180px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+html > body > .section-one > .content > .sapin .revealhoriz.show {
+  transform: translateY(0px);
+  opacity: 1;
+}
 html > body > .section-one > .content > .sushi img, html > body > .section-one > .content > .sapin img {
   max-width: 20rem;
 }
 html > body > .section-two {
   background-color: #FA9A68;
-  padding: 0.5rem;
+  padding: 0.3rem;
   position: relative;
 }
 html > body > .section-two > #polygon-up {
@@ -161,10 +202,10 @@ html > body > .section-two > #polygon-down > img {
 }
 html > body > .section-three {
   background-color: #D37C4D;
-  padding: 0.5rem;
+  padding: 0.3rem;
   border-radius: 3rem;
   position: relative;
-  margin: 15rem 0 5rem 0;
+  margin: 20rem 0 5rem 0;
 }
 html > body > .section-three > .oval-design {
   position: absolute;
@@ -184,7 +225,6 @@ html > body > .section-three > .oval-design > .oval-two {
   width: 45rem;
   height: 15rem;
   border-radius: 50%;
-  border: 0.3rem dashed #000;
   position: absolute;
   top: -6rem;
   transform: translateX(-50%);
@@ -203,7 +243,7 @@ html > body > .section-three > .container > .content {
   justify-content: center;
   background-color: #F3E9D2;
   padding: 3rem;
-  font-family: "Legend Exa", sans-serif;
+  font-family: "Lexend Exa", sans-serif;
 }
 html > body > .section-three > .container > .content > .the-favorites {
   display: flex;
@@ -217,9 +257,9 @@ html > body > .section-three > .container > .content > .the-favorites > .dishes 
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-left > .cajun-seafood {
   background-color: #662C00;
-  padding: 0.5rem;
+  padding: 0.3rem;
   border-radius: 3rem;
-  max-width: 31rem;
+  max-width: 38rem;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right {
   display: flex;
@@ -228,9 +268,9 @@ html > body > .section-three > .container > .content > .the-favorites > .dishes 
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right > .lasagna, html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right > .macaroni-salad {
   background-color: #662C00;
-  padding: 0.5rem;
+  padding: 0.3rem;
   border-radius: 3rem;
-  max-width: 15rem;
+  max-width: 18rem;
   margin: 0rem 1rem;
 }
 html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-left img, html > body > .section-three > .container > .content > .the-favorites > .dishes > .dish-right img {
@@ -259,15 +299,15 @@ html > body > .section-three > .container > .content > .baked-goods > .dishes > 
 }
 html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .chocolate-chip-muffin, html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .vanilla-muffin {
   background-color: #D37C4D;
-  padding: 0.5rem;
-  max-width: 15rem;
+  padding: 0.3rem;
+  max-width: 18rem;
   border-radius: 50%;
   position: relative;
 }
 html > body > .section-three > .container > .content > .baked-goods > .dishes > .dish-right > .strawberry-cheesecake {
   background-color: #D37C4D;
-  padding: 0.5rem;
-  max-width: 31rem;
+  padding: 0.3rem;
+  max-width: 38rem;
   border-radius: 50%;
   position: relative;
 }
@@ -284,7 +324,7 @@ html > body > .section-three > .container > .content > .full-menu {
   box-shadow: 0 22px 23px 0px rgba(0, 0, 0, 0.25);
   border-radius: 3rem;
   align-self: center;
-  margin: 10rem 0 5rem 0;
+  margin: 15rem 0 5rem 0;
   padding: 1.5rem;
   background-color: #C38134;
   cursor: pointer;
@@ -307,7 +347,7 @@ html > body > .section-four {
 }
 html > body > .section-four > .contact-us {
   background-color: #D37C4D;
-  padding: 0.5rem;
+  padding: 0.3rem;
 }
 html > body > .section-four > .contact-us > .container {
   background-color: #662C00;
@@ -319,7 +359,7 @@ html > body > .section-four > .contact-us > .container > .content {
   flex-direction: column;
   padding: 5rem 10rem;
   background-color: #F3E9D2;
-  font-family: "Legend Exa", sans-serif;
+  font-family: "Lexend Exa", sans-serif;
 }
 html > body > .section-four > .contact-us > .container > .content > .header-one {
   align-self: center;
