@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
 
 // The reason I used `padding` instead of `border` is because `absolute`-positioned elements, when set to 100% top/bottom, are placed above/below the `relative`-positioned ancestor's CONTENT-BOX instead of BORDER-BOX.
 // So the added size of the `border` property will not affect the positioning of the `absolute` element whereas, per the site's design, we want it to be affected.
 // Now, these can have its drawbacks in other designs but as far as THIS DOCUMENT specifically, there isn't, so I chose to keep the `bg-color, padding` rules for inner borders for consistency as this problem is only for the outer border specifically.
 @mixin outerBorder($color){
     background-color: $color;
-    padding:.5rem;
+    padding:.3rem;
 }
 
 @mixin innerBorder($color){
@@ -35,11 +37,11 @@
 }
 
 @mixin bigFoodContainerSize{
-    max-width: 31rem;
+    max-width: 38rem;
 }
 
 @mixin smallFoodContainerSize{
-    max-width: 15rem;
+    max-width: 18rem;
 }
 
 @mixin dishImageTemplate{
@@ -182,15 +184,46 @@ html{
                         bottom:95%;
                         left:30%;
                     }
+
+                    >.revealhoriz{
+                        position: relative;
+                        /* lifts up the cards */
+                        transform: translateX(-180px);
+                        opacity: 0;
+                        transition: all 2s ease;
+                    }
+                    .revealhoriz.show{
+                        transform: translateY(0px);
+                        opacity: 1;
+                    }
                 }
                 
                 >.text{
-                    margin: 0 6rem;
-                    margin-top: 5rem;
+                    margin: 10rem 6rem;
+                    text-align: center;
 
-                    >img{
-                      
-                        max-width: 15rem;
+                    >#from-kitch{
+                        font-family: 'Lexend Exa', sans-serif;
+                        font-size: 3.5em;
+                        color: white;
+                    }
+                    
+                    >#to-yours{
+                        font-family: 'Lemon', sans-serif;
+                        font-size: 3.5em;
+                        color: #662C00;
+                    }
+
+                    >.revealvert{
+                        position: relative;
+                        transform: translateY(-180px);
+                        opacity: 0;
+                        transition: all 2s ease;
+                    }
+                    /* activates the javascript code */
+                    .revealvert.show{
+                        transform: translateY(0px);
+                        opacity: 1;
                     }
                 }
      
@@ -202,6 +235,18 @@ html{
                         bottom:95%;
 
                         left:50%;
+                    }
+                    
+                    >.revealhoriz{
+                        position: relative;
+                        /* lifts up the cards */
+                        transform: translateX(-180px);
+                        opacity: 0;
+                        transition: all 2s ease;
+                    }
+                    .revealhoriz.show{
+                        transform: translateY(0px);
+                        opacity: 1;
                     }    
                 }
 
@@ -227,8 +272,6 @@ html{
                 }
             }
 
-      
-
             >.container{
                 @include shadowTemplate();
                 @include innerBorder(#662C00);
@@ -236,7 +279,6 @@ html{
                 display:flex;
              
                 z-index: 1;
-              
 
                 >.content{
                     @include dashedBorder(#FA9A68);
@@ -280,7 +322,7 @@ html{
 
             position: relative;
             
-            margin:15rem 0 5rem 0;
+            margin:20rem 0 5rem 0;
             
             >.oval-design{
                 position:absolute;
@@ -300,7 +342,6 @@ html{
 
                 >.oval-two{
                     @include oval-shape();
-                    @include dashedBorder(#000);
 
                     position: absolute;
                     top:-6rem;
@@ -327,7 +368,7 @@ html{
 
                     padding: 3rem;
                   
-                    font-family: "Legend Exa", sans-serif;
+                    font-family: "Lexend Exa", sans-serif;
          
                     >.the-favorites{
                     
@@ -439,7 +480,7 @@ html{
 
                         align-self: center;
 
-                        margin: 10rem 0 5rem 0;
+                        margin: 15rem 0 5rem 0;
                         padding: 1.5rem;
                         
                         background-color: #C38134;
@@ -488,7 +529,7 @@ html{
                         padding: 5rem 10rem;
 
                         background-color: #F3E9D2;
-                        font-family: "Legend Exa", sans-serif;
+                        font-family: "Lexend Exa", sans-serif;
 
                         >.header-one{
                             align-self: center;
