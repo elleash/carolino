@@ -109,462 +109,962 @@ html{
     scroll-behavior: smooth;
 
     >body{
+       
         display: flex;
         flex-direction: column;
 
         background-image: url("img/paper-background.png");
         background-size: cover;
 
-        >.section-one{
-           
-            >.nav{
-                position: relative;
-                background-color: #662C00;
-
-                >ul{
-                    display: flex;
-
-                    padding-inline-start: 0;
-
-                    list-style-type: none;
-
-                    >a{
-                        padding: 2rem;
-
-                        color: white;
-
-                        text-decoration: none;
-
-                        transition: background-color .2s ease-in;
-
-                        >li{
-                            font-size: 1.2rem;
-                        }
-                    }
-
-                    >a:hover{
-                        background-color: #754119;
-                    }
-
-                    >#contact-us-link{
-                        margin-left: auto;
-                    }
-                }
-
-                >.logo{
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                 
-                    >img{
-                        position: absolute;
-                        
-                        transform: translateX(-50%);
-                        
-                    }
-                    >#logo{
-                        max-width: 32rem;
-                    }
-
-                }         
-            }
-
-            >.content{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                padding: 7rem 0;
-    
-                >.sushi{
-                    position: relative;
-                    
-                    >#pin{
-                        position:absolute;
-                        bottom:95%;
-                        left:30%;
-
-                        z-index: 1;
-                    }
-
-                    >.revealhoriz{
-                        position: relative;
-                        /* lifts up the cards */
-                        transform: translateX(-180px);
-                        opacity: 0;
-                        transition: all 2s ease;
-                    }
-                    .revealhoriz.show{
-                        transform: translateY(0px);
-                        opacity: 1;
-                    }
-                }
-                
-                >.text{
-                    margin: 10rem 6rem;
-                    text-align: center;
-
-                    >#from-kitch{
-                        font-family: 'Lexend Exa', sans-serif;
-                        font-size: 3.5em;
-                        color: white;
-                    }
-                    
-                    >#to-yours{
-                        font-family: 'Lemon', sans-serif;
-                        font-size: 3.5em;
-                        color: #662C00;
-                    }
-
-                    >.revealvert{
-                        position: relative;
-                        transform: translateY(-180px);
-                        opacity: 0;
-                        transition: all 2s ease;
-                    }
-                    /* activates the javascript code */
-                    .revealvert.show{
-                        transform: translateY(0px);
-                        opacity: 1;
-                    }
-                }
-     
-                >.sapin{
-                    position: relative;
-
-                    >#pin{
-                        position:absolute;
-                        bottom:95%;
-                        left:50%;
-
-                        z-index: 1;
-                    }
-                    
-                    >.revealhoriz{
-                        position: relative;
-                        /* lifts up the cards */
-                        transform: translateX(-180px);
-                        opacity: 0;
-                        transition: all 2s ease;
-                    }
-                    .revealhoriz.show{
-                        transform: translateY(0px);
-                        opacity: 1;
-                    }    
-                }
-
-                >.sushi img, >.sapin img{
-                    max-width: 20rem;
-                }
-            }
-        }
-
-        >.section-two{
-            @include outerBorder(#FA9A68);
-
-            position:relative;
-            
-            >#polygon-up{
-                position:absolute;
-                bottom:100%;
-                left:50%;
-                transform: translateX(-50%);
-
-                >img{
-                    @include polygonImageSize();
-                }
-            }
-
-            >.container{
-                @include shadowTemplate();
-                @include innerBorder(#662C00);
-
-                position: relative;
-                
-                display:flex;
-             
-                z-index: 1;
-
-                >.content{
-                    @include dashedBorder(#FA9A68);
-
-                    flex:1;
-                    display:flex;
-
-                    // top, left, bottom, right
-                    padding: 10rem;
-                    
-                    background-color: #F3E9D2;
-                    justify-content: space-between;
-
-                    >.text{
-                      
-                        >.paragraph{
-                            margin-top: 1.5rem;
-                            max-width: 35rem;
-                            font-size: 2.5rem;
-                        }
-                    }
-                }
-            }
-
-            >#polygon-down{
-                position:absolute;
-                top:100%;
-                left:50%;
-
-                transform: translateX(-50%);
-
-                >img{
-                    @include polygonImageSize();
-                }
-            }
-        }
-
-        >.section-three{
-            @include outerBorder(#D37C4D);
-            @include squareBorderRadius();
-
-            position: relative;
-            
-            margin:20rem 0 5rem 0;
-            
-            >.oval-design{
-                position:absolute;
-                top:0;
-                left:50%;
-
-                >.oval-one{
-                    @include oval-shape();
-
-                    position: absolute;
-                    top:-7rem;
-
-                    transform: translateX(-50%);
-                    
-                    background-color: #C57243;
-                }
-
-                >.oval-two{
-                    @include oval-shape();
-
-                    position: absolute;
-                    top:-6rem;
-
-                    transform: translateX(-50%);
-                    
-                    background-color: #662C00;
-                }
-            }
-
-            >.container{
-                @include innerBorder(#662C00);
-                @include squareBorderRadius();
-
-                >.content{
-                    @include dashedBorder(#D37C4D);
-                    @include squareBorderRadius();
-
-                    display:flex;
-                    flex-direction: column;
-                    justify-content: center;
-
-                    background-color: #F3E9D2;
-
-                    padding: 3rem;
-                  
-                    font-family: "Lexend Exa", sans-serif;
-         
-                    >.the-favorites{
-                    
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-
-                        margin-top: 10rem;
-
-                        >.dishes{
-                            display: flex;
-
-                            margin-top: 3rem;
-
-                            >.dish-left{
-
-                                >.cajun-seafood{
-                                    @include outerBorder(#662C00);
-                                    @include squareBorderRadius();
-                                    @include bigFoodContainerSize();
-                                   
-                                }
-                            }
-
-                            >.dish-right{
-                                display:flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-
-                                >.lasagna, >.macaroni-salad{
-                                    @include outerBorder(#662C00);
-                                    @include squareBorderRadius();
-                                    @include smallFoodContainerSize();
-
-                                    margin: 0rem 1rem;
-                                            
-                                }
-                            }
-
-                            >.dish-left img, >.dish-right img{
-                                @include dishImageTemplate();     
-                            }
-
-                            >.dish-left .wrapper, >.dish-right .wrapper{
-                                @include squareBorderRadius();
-
-                                position:relative;
-                            }
-                    
-                            
-
-                        }
-                    }
-
-                    >.baked-goods{
-                        margin-top: 8rem;
-                   
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-
-
-                        >.dishes{
-                            display:flex;
-
-                            margin-top:3rem;
-
-                            >.dish-left{
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-
-                                >.chocolate-chip-muffin, >.vanilla-muffin{
-                                    @include outerBorder(#D37C4D);
-                                    @include smallFoodContainerSize();
-                                    @include circleBorderRadius();
-
-                                    position: relative;         
-                                } 
-                            }
-
-                            >.dish-right{
-                            
-                                >.strawberry-cheesecake{
-                                    @include outerBorder(#D37C4D);
-                                    @include bigFoodContainerSize();
-                                    @include circleBorderRadius();
-
-                                    position: relative;  
-                                }
-                            }
-
-                            >.dish-left img, >.dish-right img{
-                                @include dishImageTemplate();
-                            }
-
-                            >.dish-left .wrapper, >.dish-right .wrapper{
-                                @include circleBorderRadius();
-
-                                position:relative;
-                            }
-
-                        }
-                    }
-
-                    >.full-menu{
-                        @include shadowTemplate();
-                        @include squareBorderRadius();
-
-                        align-self: center;
-
-                        margin: 15rem 0 5rem 0;
-                        padding: 1.5rem;
-                        
-                        background-color: #C38134;
-                        
-                        cursor: pointer;
-
-                        >.content{
-                            display:flex;
-                            flex-direction: column;
-                            
-                            align-items: center;
-
-                            padding: 1rem 2rem;
-    
-                            border-radius: 2rem;
-                            background-color: #C98B42;
-                            
-                            color: #fff;
-
-                            >p{
-                                padding: .7rem 0;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        >.section-four{
-            align-self: center;
-
-            padding: 3rem;
-            
-            >.contact-us{
-                @include outerBorder(#D37C4D); 
-            
-                >.container{
-                    @include innerBorder(#662C00);
-
-                    >.content{
-                        @include dashedBorder(#D37C4D);
-                        
-                        display: flex;
-                        flex-direction: column;
-                        
-                        padding: 5rem 10rem;
-
-                        background-color: #F3E9D2;
-                        font-family: "Lexend Exa", sans-serif;
-
-                        >.header-one{
-                            align-self: center;
-                        }
-
-                        >.header-two{
-                            margin-top: 2rem;
-                        }
-
-                        input, textarea{
-                            margin-top:1rem;
-                            font-size: 1.5rem;
-                        }
-                    }   
-                }
-            }
-
-            >.socials{
-                margin: 5rem 0 0 0;
-
-                display:flex;
-                justify-content: space-between;
-
-                >img{
-                    max-width: 12rem;
-                }
-            }     
-        }
     }   
  }
 
 
+@media (min-width:801px) {
+    .section-one{
+           
+        >.nav{
+            position: relative;
+            background-color: #662C00;
 
+            >ul{
+                display: flex;
+
+                padding-inline-start: 0;
+
+                list-style-type: none;
+
+                >*{
+                    padding: 2rem;
+
+                    color: white;
+
+                    text-decoration: none;
+
+                    transition: background-color .2s ease-in;
+
+                    >li{
+                        font-size: 1.2rem;
+                    }
+                }
+
+                >a:hover{
+                    background-color: #754119;
+                }
+
+                >#contact-us-link{
+                    margin-left: auto;
+                }
+
+                >.menu{
+                    display: none;
+                }
+            }
+
+            >.logo{
+                position: absolute;
+                top: 0;
+                left: 50%;
+             
+                >img{
+                    position: absolute;
+                    
+                    transform: translateX(-50%);
+                    
+                    max-width: 32rem;
+                }
+                
+
+            }         
+        }
+
+        >.content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 7rem 0;
+
+            >.sushi{
+                position: relative;
+                
+                >#pin{
+                    position:absolute;
+                    bottom:95%;
+                    left:30%;
+
+                    z-index: 1;
+                }
+
+                >.revealhoriz{
+                    position: relative;
+                    /* lifts up the cards */
+                    transform: translateX(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                .revealhoriz.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
+            
+            >.text{
+                margin: 10rem 6rem;
+                text-align: center;
+
+                >#from-kitch{
+                    font-family: 'Lexend Exa', sans-serif;
+                    font-size: 3.5em;
+                    color: white;
+                }
+                
+                >#to-yours{
+                    font-family: 'Lemon', sans-serif;
+                    font-size: 3.5em;
+                    color: #662C00;
+                }
+
+                >.revealvert{
+                    position: relative;
+                    transform: translateY(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                /* activates the javascript code */
+                .revealvert.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
+ 
+            >.sapin{
+                position: relative;
+
+                >#pin{
+                    position:absolute;
+                    bottom:95%;
+                    left:50%;
+
+                    z-index: 1;
+                }
+                
+                >.revealhoriz{
+                    position: relative;
+                    /* lifts up the cards */
+                    transform: translateX(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                .revealhoriz.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }    
+            }
+
+            >.sushi img, >.sapin img{
+                max-width: 20rem;
+            }
+        }
+    }
+
+    .section-two{
+        @include outerBorder(#FA9A68);
+
+        position:relative;
+        
+        >#polygon-up{
+            position:absolute;
+            bottom:100%;
+            left:50%;
+            transform: translateX(-50%);
+
+            >img{
+                @include polygonImageSize();
+            }
+        }
+
+        >.container{
+            @include shadowTemplate();
+            @include innerBorder(#662C00);
+
+            position: relative;
+            
+            display:flex;
+         
+            z-index: 1;
+
+            >.content{
+                @include dashedBorder(#FA9A68);
+
+                flex:1;
+                display:flex;
+
+                // top, left, bottom, right
+                padding: 10rem;
+                
+                background-color: #F3E9D2;
+                justify-content: space-between;
+
+                >.text{
+                  
+                    >.paragraph{
+                        margin-top: 1.5rem;
+                        max-width: 35rem;
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+
+        >#polygon-down{
+            position:absolute;
+            top:100%;
+            left:50%;
+
+            transform: translateX(-50%);
+
+            >img{
+                @include polygonImageSize();
+            }
+        }
+    }
+
+    .section-three{
+        @include outerBorder(#D37C4D);
+        @include squareBorderRadius();
+
+        position: relative;
+        
+        margin:20rem 0 5rem 0;
+        
+        >.oval-design{
+            position:absolute;
+            top:0;
+            left:50%;
+
+            >.oval-one{
+                @include oval-shape();
+
+                position: absolute;
+                top:-7rem;
+
+                transform: translateX(-50%);
+                
+                background-color: #C57243;
+            }
+
+            >.oval-two{
+                @include oval-shape();
+
+                position: absolute;
+                top:-6rem;
+
+                transform: translateX(-50%);
+                
+                background-color: #662C00;
+            }
+        }
+
+        >.container{
+            @include innerBorder(#662C00);
+            @include squareBorderRadius();
+
+            >.content{
+                @include dashedBorder(#D37C4D);
+                @include squareBorderRadius();
+
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+
+                background-color: #F3E9D2;
+
+                padding: 3rem;
+              
+                font-family: "Lexend Exa", sans-serif;
+     
+                >.the-favorites{
+                
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    margin-top: 10rem;
+
+                    >.dishes{
+                        display: flex;
+
+                        margin-top: 3rem;
+
+                        >.dish-left{
+
+                            >.cajun-seafood{
+                                @include outerBorder(#662C00);
+                                @include squareBorderRadius();
+                                @include bigFoodContainerSize();
+                               
+                            }
+                        }
+
+                        >.dish-right{
+                            display:flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+
+                            >.lasagna, >.macaroni-salad{
+                                @include outerBorder(#662C00);
+                                @include squareBorderRadius();
+                                @include smallFoodContainerSize();
+
+                                margin: 0rem 1rem;
+                                        
+                            }
+                        }
+
+                        >.dish-left img, >.dish-right img{
+                            @include dishImageTemplate();     
+                        }
+
+                        >.dish-left .wrapper, >.dish-right .wrapper{
+                            @include squareBorderRadius();
+
+                            position:relative;
+                        }
+                
+                        
+
+                    }
+                }
+
+                >.baked-goods{
+                    margin-top: 8rem;
+               
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+
+                    >.dishes{
+                        display:flex;
+
+                        margin-top:3rem;
+
+                        >.dish-left{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+
+                            >.chocolate-chip-muffin, >.vanilla-muffin{
+                                @include outerBorder(#D37C4D);
+                                @include smallFoodContainerSize();
+                                @include circleBorderRadius();
+
+                                position: relative;         
+                            } 
+                        }
+
+                        >.dish-right{
+                        
+                            >.strawberry-cheesecake{
+                                @include outerBorder(#D37C4D);
+                                @include bigFoodContainerSize();
+                                @include circleBorderRadius();
+
+                                position: relative;  
+                            }
+                        }
+
+                        >.dish-left img, >.dish-right img{
+                            @include dishImageTemplate();
+                        }
+
+                        >.dish-left .wrapper, >.dish-right .wrapper{
+                            @include circleBorderRadius();
+
+                            position:relative;
+                        }
+
+                    }
+                }
+
+                >.full-menu{
+                    @include shadowTemplate();
+                    @include squareBorderRadius();
+
+                    align-self: center;
+
+                    margin: 15rem 0 5rem 0;
+                    padding: 1.5rem;
+                    
+                    background-color: #C38134;
+                    
+                    cursor: pointer;
+
+                    >.content{
+                        display:flex;
+                        flex-direction: column;
+                        
+                        align-items: center;
+
+                        padding: 1rem 2rem;
+
+                        border-radius: 2rem;
+                        background-color: #C98B42;
+                        
+                        color: #fff;
+
+                        >p{
+                            padding: .7rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .section-four{
+        align-self: center;
+
+        padding: 3rem;
+        
+        >.contact-us{
+            @include outerBorder(#D37C4D); 
+        
+            >.container{
+                @include innerBorder(#662C00);
+
+                >.content{
+                    @include dashedBorder(#D37C4D);
+                    
+                    display: flex;
+                    flex-direction: column;
+                    
+                    padding: 5rem 10rem;
+
+                    background-color: #F3E9D2;
+                    font-family: "Lexend Exa", sans-serif;
+
+                    >.header-one{
+                        align-self: center;
+                    }
+
+                    >.header-two{
+                        margin-top: 2rem;
+                    }
+
+                    input, textarea{
+                        margin-top:1rem;
+                        font-size: 1.5rem;
+                    }
+                }   
+            }
+        }
+
+        >.socials{
+            margin: 5rem 0 0 0;
+
+            display:flex;
+            justify-content: space-between;
+
+            >img{
+                max-width: 12rem;
+            }
+        }     
+    }
+}
+
+@media (min-width:481px) and (max-width:800px) {
+    .section-one{
+           
+        >.nav{
+            position: relative;
+            background-color: #662C00;
+
+            >ul{
+                display: flex;
+
+                padding-inline-start: 0;
+
+                list-style-type: none;
+
+                >*{
+                    padding: 2rem;
+
+                    color: white;
+
+                    text-decoration: none;
+
+                    transition: background-color .2s ease-in;
+
+                    >li{
+                        font-size: 1.2rem;
+                    }
+                }
+
+                >a:hover{
+                    background-color: #754119;
+                }
+
+                >#contact-us-link{
+                    margin-left: auto;
+                }
+
+                >a{
+                    display: none;
+                }
+                >.menu{
+                    display: block;
+                    
+                    cursor: pointer;
+                }
+
+            }
+
+            >.logo{
+                position: absolute;
+                top: 0;
+                left: 50%;
+             
+                >img{
+                    position: absolute;
+                    
+                    transform: translateX(-50%);
+                    
+                    max-width: 32rem;
+                }
+                
+
+            }         
+        }
+
+        >.content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 2rem 0;
+
+            >.sushi{
+                position: relative;
+                
+                flex:1;
+                
+                margin:1rem;
+                >#pin{
+                    display: none;
+
+                    position:absolute;
+                    bottom:95%;
+                    left:30%;
+
+                    z-index: 1;
+                }
+                >#sushi-img{
+                    max-width: 100%;
+                }
+
+                >.revealhoriz{
+                    position: relative;
+                    /* lifts up the cards */
+                    transform: translateX(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                .revealhoriz.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
+            
+            >.text{
+                margin: 18rem 0 10rem 0;
+                text-align: center;
+
+                >#from-kitch{
+                    font-family: 'Lexend Exa', sans-serif;
+                    font-size: 3.5em;
+                    color: white;
+                }
+                
+                >#to-yours{
+                    font-family: 'Lemon', sans-serif;
+                    font-size: 3.5em;
+                    color: #662C00;
+                }
+
+                >.revealvert{
+                    position: relative;
+                    transform: translateY(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                /* activates the javascript code */
+                .revealvert.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
+ 
+            >.sapin{
+                position: relative;
+
+                flex:1;
+
+                margin:1rem;
+                >#pin{
+                    display: none;
+
+                    position:absolute;
+                    bottom:95%;
+                    left:50%;
+
+                    z-index: 1;
+                }
+
+                >#sapin-sapin-img{
+                    max-width: 100%;
+                }
+
+                >.revealhoriz{
+                    position: relative;
+                    /* lifts up the cards */
+                    transform: translateX(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                .revealhoriz.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }    
+            }
+
+            >.sushi img, >.sapin img{
+                max-width: 20rem;
+            }
+        }
+    }
+
+    .section-two{
+      
+        @include outerBorder(#FA9A68);
+
+        position:relative;
+        
+        >#polygon-up{
+            position:absolute;
+            bottom:100%;
+            left:50%;
+            transform: translateX(-50%);
+
+            >img{
+                @include polygonImageSize();
+            }
+        }
+
+        >.container{
+            @include shadowTemplate();
+            @include innerBorder(#662C00);
+
+            position: relative;
+            
+            display:flex;
+         
+            z-index: 1;
+
+            >.content{
+                @include dashedBorder(#FA9A68);
+
+                flex:1;
+                display:flex;
+
+                // top, left, bottom, right
+                padding: 4rem 2.5rem;
+                
+                background-color: #F3E9D2;
+                justify-content: space-between;
+
+                >.text{
+                    >.header-one{
+                        font-weight: 300;
+                        font-size: 2rem;
+                    }
+                  
+                    >.paragraph{
+                        margin-top: 1.5rem;
+                        max-width: 35rem;
+                        font-size: 1.2rem;
+                    }
+                }
+
+                >.image{
+                    >img{
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+        >#polygon-down{
+            position:absolute;
+            top:100%;
+            left:50%;
+
+            transform: translateX(-50%);
+
+            >img{
+                @include polygonImageSize();
+            }
+        }
+    }
+
+    .section-three{
+        display:none;
+        @include outerBorder(#D37C4D);
+        @include squareBorderRadius();
+
+        position: relative;
+        
+        margin:20rem 0 5rem 0;
+        
+        >.oval-design{
+            position:absolute;
+            top:0;
+            left:50%;
+
+            >.oval-one{
+                @include oval-shape();
+
+                position: absolute;
+                top:-7rem;
+
+                transform: translateX(-50%);
+                
+                background-color: #C57243;
+            }
+
+            >.oval-two{
+                @include oval-shape();
+
+                position: absolute;
+                top:-6rem;
+
+                transform: translateX(-50%);
+                
+                background-color: #662C00;
+            }
+        }
+
+        >.container{
+            @include innerBorder(#662C00);
+            @include squareBorderRadius();
+
+            >.content{
+                @include dashedBorder(#D37C4D);
+                @include squareBorderRadius();
+
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+
+                background-color: #F3E9D2;
+
+                padding: 3rem;
+              
+                font-family: "Lexend Exa", sans-serif;
+     
+                >.the-favorites{
+                
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    margin-top: 10rem;
+
+                    >.dishes{
+                        display: flex;
+
+                        margin-top: 3rem;
+
+                        >.dish-left{
+
+                            >.cajun-seafood{
+                                @include outerBorder(#662C00);
+                                @include squareBorderRadius();
+                                @include bigFoodContainerSize();
+                               
+                            }
+                        }
+
+                        >.dish-right{
+                            display:flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+
+                            >.lasagna, >.macaroni-salad{
+                                @include outerBorder(#662C00);
+                                @include squareBorderRadius();
+                                @include smallFoodContainerSize();
+
+                                margin: 0rem 1rem;
+                                        
+                            }
+                        }
+
+                        >.dish-left img, >.dish-right img{
+                            @include dishImageTemplate();     
+                        }
+
+                        >.dish-left .wrapper, >.dish-right .wrapper{
+                            @include squareBorderRadius();
+
+                            position:relative;
+                        }
+                
+                        
+
+                    }
+                }
+
+                >.baked-goods{
+                    margin-top: 8rem;
+               
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+
+                    >.dishes{
+                        display:flex;
+
+                        margin-top:3rem;
+
+                        >.dish-left{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+
+                            >.chocolate-chip-muffin, >.vanilla-muffin{
+                                @include outerBorder(#D37C4D);
+                                @include smallFoodContainerSize();
+                                @include circleBorderRadius();
+
+                                position: relative;         
+                            } 
+                        }
+
+                        >.dish-right{
+                        
+                            >.strawberry-cheesecake{
+                                @include outerBorder(#D37C4D);
+                                @include bigFoodContainerSize();
+                                @include circleBorderRadius();
+
+                                position: relative;  
+                            }
+                        }
+
+                        >.dish-left img, >.dish-right img{
+                            @include dishImageTemplate();
+                        }
+
+                        >.dish-left .wrapper, >.dish-right .wrapper{
+                            @include circleBorderRadius();
+
+                            position:relative;
+                        }
+
+                    }
+                }
+
+                >.full-menu{
+                    @include shadowTemplate();
+                    @include squareBorderRadius();
+
+                    align-self: center;
+
+                    margin: 15rem 0 5rem 0;
+                    padding: 1.5rem;
+                    
+                    background-color: #C38134;
+                    
+                    cursor: pointer;
+
+                    >.content{
+                        display:flex;
+                        flex-direction: column;
+                        
+                        align-items: center;
+
+                        padding: 1rem 2rem;
+
+                        border-radius: 2rem;
+                        background-color: #C98B42;
+                        
+                        color: #fff;
+
+                        >p{
+                            padding: .7rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .section-four{
+        display:none;
+        align-self: center;
+
+        padding: 3rem;
+        
+        >.contact-us{
+            @include outerBorder(#D37C4D); 
+        
+            >.container{
+                @include innerBorder(#662C00);
+
+                >.content{
+                    @include dashedBorder(#D37C4D);
+                    
+                    display: flex;
+                    flex-direction: column;
+                    
+                    padding: 5rem 10rem;
+
+                    background-color: #F3E9D2;
+                    font-family: "Lexend Exa", sans-serif;
+
+                    >.header-one{
+                        align-self: center;
+                    }
+
+                    >.header-two{
+                        margin-top: 2rem;
+                    }
+
+                    input, textarea{
+                        margin-top:1rem;
+                        font-size: 1.5rem;
+                    }
+                }   
+            }
+        }
+
+        >.socials{
+            margin: 5rem 0 0 0;
+
+            display:flex;
+            justify-content: space-between;
+
+            >img{
+                max-width: 12rem;
+            }
+        }     
+    }
+    
+}
+
+@media (max-width:481px) {
+    
+}
