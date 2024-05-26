@@ -392,9 +392,6 @@ html > body {
   .section-three > .container > .content > .full-menu > .content > p {
     padding: 0.7rem 0;
   }
-  .section-four {
-    align-self: center;
-  }
   .section-four > .socials {
     display: flex;
     justify-content: space-between;
@@ -762,33 +759,6 @@ html > body {
   }
   .section-four {
     align-self: center;
-  }
-  .section-four > .contact-us {
-    display: none;
-    background-color: #D37C4D;
-    padding: 0.3rem;
-  }
-  .section-four > .contact-us > .container {
-    background-color: #662C00;
-    padding: 0.7rem;
-  }
-  .section-four > .contact-us > .container > .content {
-    border: 0.3rem dashed #D37C4D;
-    display: flex;
-    flex-direction: column;
-    padding: 5rem 10rem;
-    background-color: #F3E9D2;
-    font-family: "Lexend Exa", sans-serif;
-  }
-  .section-four > .contact-us > .container > .content > .header-one {
-    align-self: center;
-  }
-  .section-four > .contact-us > .container > .content > .header-two {
-    margin-top: 2rem;
-  }
-  .section-four > .contact-us > .container > .content input, .section-four > .contact-us > .container > .content textarea {
-    margin-top: 1rem;
-    font-size: 1.5rem;
   }
   .section-four > .socials {
     display: flex;

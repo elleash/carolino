@@ -612,9 +612,6 @@ html{
     }
 
     .section-four{
-        
-        align-self: center;
-        
         >.socials{
 
             display:flex;
@@ -1121,45 +1118,7 @@ html{
     }
 
     .section-four{
-        
         align-self: center;
-
-       
-        
-        >.contact-us{
-            display: none;
-            @include outerBorder(#D37C4D); 
-        
-            >.container{
-                @include innerBorder(#662C00);
-
-                >.content{
-                    @include dashedBorder(#D37C4D);
-                    
-                    display: flex;
-                    flex-direction: column;
-                    
-                    padding: 5rem 10rem;
-
-                    background-color: #F3E9D2;
-                    font-family: "Lexend Exa", sans-serif;
-
-                    >.header-one{
-                        align-self: center;
-                    }
-
-                    >.header-two{
-                        margin-top: 2rem;
-                    }
-
-                    input, textarea{
-                        margin-top:1rem;
-                        font-size: 1.5rem;
-                    }
-                }   
-            }
-        }
-
         >.socials{
 
             display:flex;
