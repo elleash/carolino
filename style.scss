@@ -32,17 +32,16 @@
 @mixin oval-shape($size){
     // standard w/h: 800px 45/15rem, 480~800px: 30/13rem?
     @if $size == "small"{
-        width: 5rem;
-        height: 2.5rem;
+        // TO DO 
     }
 
     @else if $size == "medium"{
-        width: 28rem;
-        height: 10rem;
+        width: 25rem;
+        height: 12rem;
     }
 
     @else if $size == "large"{
-        width: 45rem;
+        width: 48rem;
         height: 15rem;
     }
 
@@ -53,17 +52,6 @@
     border-radius: 50%;
 }
 
-@mixin bigFoodContainerSize($size){
-    @if $size == "large"{
-        max-width: 38rem;
-    }
-
-    @else{
-      
-       
-    }
-    
-}
 
 @mixin squareBorderRadius($size){
     @if $size == "small"{
@@ -350,10 +338,6 @@ html{
                 justify-content: space-between;
 
                 >.text{
-                    >.header-one{
-                        font-weight: 300;
-                        font-size: clamp(3rem,4vw,4rem);
-                    }
                   
                     >.paragraph{
                         margin-top: 1.5rem;
@@ -850,21 +834,24 @@ html{
                 justify-content: space-between;
 
                 >.text{
+                    max-width: 50%;
                     >.header-one{
-                        font-weight: 300;
                         font-size: 2rem;
                     }
                   
                     >.paragraph{
                         margin-top: 1.5rem;
-                        max-width: 35rem;
                         font-size: 1.2rem;
                     }
                 }
 
                 >.image{
+                    display: flex;
+                    align-items: center;
                     >img{
                         max-width: 100%;
+                        
+                        aspect-ratio: 1 / 1;
                     }
                 }
             }
@@ -959,7 +946,6 @@ html{
                             >.cajun-seafood{
                                 @include outerBorder(#662C00);
                                 @include squareBorderRadius("medium");
-                                @include bigFoodContainerSize("none");   
                                 .wrapper{
 
                                     position: relative;
@@ -1068,8 +1054,9 @@ html{
                             justify-content: center;
                             >.strawberry-cheesecake{
                                 @include outerBorder(#D37C4D);
-                                @include bigFoodContainerSize("large");
                                 @include circleBorderRadius();
+
+                                max-width: 30rem;
                                 >.wrapper{
                                     position:relative;
 
@@ -1180,6 +1167,8 @@ html{
     
 }
 
+
+// TO DO
 @media (max-width:481px) {
-    
+    // Copy-paste all sections in the SCSS written for 481-800px. Use the code from there.
 }

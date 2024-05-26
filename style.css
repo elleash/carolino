@@ -203,10 +203,6 @@ html > body {
     background-color: #F3E9D2;
     justify-content: space-between;
   }
-  .section-two > .container > .content > .text > .header-one {
-    font-weight: 300;
-    font-size: clamp(3rem, 4vw, 4rem);
-  }
   .section-two > .container > .content > .text > .paragraph {
     margin-top: 1.5rem;
     max-width: 35rem;
@@ -237,7 +233,7 @@ html > body {
     left: 50%;
   }
   .section-three > .oval-design > .oval-one {
-    width: 45rem;
+    width: 48rem;
     height: 15rem;
     border-radius: 50%;
     position: absolute;
@@ -246,7 +242,7 @@ html > body {
     background-color: #C57243;
   }
   .section-three > .oval-design > .oval-two {
-    width: 45rem;
+    width: 48rem;
     height: 15rem;
     border-radius: 50%;
     position: absolute;
@@ -565,17 +561,23 @@ html > body {
     background-color: #F3E9D2;
     justify-content: space-between;
   }
+  .section-two > .container > .content > .text {
+    max-width: 50%;
+  }
   .section-two > .container > .content > .text > .header-one {
-    font-weight: 300;
     font-size: 2rem;
   }
   .section-two > .container > .content > .text > .paragraph {
     margin-top: 1.5rem;
-    max-width: 35rem;
     font-size: 1.2rem;
+  }
+  .section-two > .container > .content > .image {
+    display: flex;
+    align-items: center;
   }
   .section-two > .container > .content > .image > img {
     max-width: 100%;
+    aspect-ratio: 1/1;
   }
   .section-two > #polygon-down {
     position: absolute;
@@ -599,8 +601,8 @@ html > body {
     left: 50%;
   }
   .section-three > .oval-design > .oval-one {
-    width: 28rem;
-    height: 10rem;
+    width: 25rem;
+    height: 12rem;
     border-radius: 50%;
     position: absolute;
     top: -5rem;
@@ -608,8 +610,8 @@ html > body {
     background-color: #C57243;
   }
   .section-three > .oval-design > .oval-two {
-    width: 28rem;
-    height: 10rem;
+    width: 25rem;
+    height: 12rem;
     border-radius: 50%;
     position: absolute;
     top: -4rem;
@@ -722,8 +724,8 @@ html > body {
   .section-three > .container > .content > .baked-goods > .dishes > .dish-right > .strawberry-cheesecake {
     background-color: #D37C4D;
     padding: 0.3rem;
-    max-width: 38rem;
     border-radius: 50%;
+    max-width: 30rem;
   }
   .section-three > .container > .content > .baked-goods > .dishes > .dish-right > .strawberry-cheesecake > .wrapper {
     position: relative;
