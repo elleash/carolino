@@ -10,11 +10,6 @@ img {
   display: block;
 }
 
-.header-two {
-  font-weight: 300;
-  font-size: clamp(1rem, 2vw, 2rem);
-}
-
 .overlay {
   display: flex;
   align-items: center;
@@ -32,6 +27,16 @@ img {
 
 .overlay:hover {
   opacity: 1;
+}
+
+.header-one {
+  font-weight: 300;
+  font-size: clamp(3rem, 4vw, 4rem);
+}
+
+.header-two {
+  font-weight: 300;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
 }
 
 html {
@@ -692,7 +697,6 @@ html > body {
   }
   .section-three > .container > .content > .baked-goods > .dishes > .dish-left {
     display: flex;
-    justify-content: space-between;
   }
   .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .chocolate-chip-muffin, .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .vanilla-muffin {
     background-color: #D37C4D;
@@ -710,6 +714,10 @@ html > body {
     max-width: 100%;
     border-radius: inherit;
     aspect-ratio: 1/1;
+  }
+  .section-three > .container > .content > .baked-goods > .dishes > .dish-right {
+    display: flex;
+    justify-content: center;
   }
   .section-three > .container > .content > .baked-goods > .dishes > .dish-right > .strawberry-cheesecake {
     background-color: #D37C4D;

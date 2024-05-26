@@ -98,11 +98,6 @@ img{
     display:block;
 }
 
-.header-two{
-    font-weight: 300;
-    font-size: clamp(1rem,2vw,2rem);
-}
-
 .overlay{
     display:flex;
     align-items: center;
@@ -125,6 +120,16 @@ img{
 
 .overlay:hover{
     opacity: 1;
+}
+
+.header-one{
+    font-weight: 300;
+    font-size: clamp(3rem,4vw,4rem);
+}
+
+.header-two{
+    font-weight: 300;
+    font-size: clamp(2rem,2.5vw,2.5rem);
 }
 
 html{
@@ -440,6 +445,7 @@ html{
                     margin-top: 10rem;
 
                     text-align: center;
+                    
                     >.dishes{
                         display: flex;
 
@@ -982,7 +988,7 @@ html{
                         >.dish-right{
                             display:flex;
                             justify-content: space-between;
-
+                            
                             >.lasagna, >.macaroni-salad{
                                 @include outerBorder(#662C00);
                                 @include squareBorderRadius("medium");
@@ -1030,8 +1036,6 @@ html{
 
                         >.dish-left{
                             display: flex;
-                            justify-content: space-between;
-
                             >.chocolate-chip-muffin, >.vanilla-muffin{
                                 @include outerBorder(#D37C4D);
                               
@@ -1060,6 +1064,8 @@ html{
                         }
 
                         >.dish-right{
+                            display: flex;
+                            justify-content: center;
                             >.strawberry-cheesecake{
                                 @include outerBorder(#D37C4D);
                                 @include bigFoodContainerSize("large");
