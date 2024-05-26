@@ -29,31 +29,60 @@
     box-shadow: 0 22px 23px 0px rgba(0,0,0,.25);
 }
 
-@mixin oval-shape{
-    width: 45rem;
-    height:15rem;
+@mixin oval-shape($size){
+    // standard w/h: 800px 45/15rem, 480~800px: 30/13rem?
+    @if $size == "small"{
+        width: 5rem;
+        height: 2.5rem;
+    }
+
+    @else if $size == "medium"{
+        width: 28rem;
+        height: 10rem;
+    }
+
+    @else if $size == "large"{
+        width: 45rem;
+        height: 15rem;
+    }
+
+    @else {
+        @warn "Unknown size input: #{$size}. Only 'small', 'medium', and 'large' allowed."
+    }
 
     border-radius: 50%;
 }
 
-@mixin bigFoodContainerSize{
-    max-width: 38rem;
+@mixin bigFoodContainerSize($size){
+    @if $size == "large"{
+        max-width: 38rem;
+    }
+
+    @else{
+      
+       
+    }
+    
 }
 
-@mixin smallFoodContainerSize{
-    max-width: 18rem;
-}
+@mixin squareBorderRadius($size){
+    @if $size == "small"{
+        border-radius: 5rem;
+    }
 
-@mixin dishImageTemplate{
-    max-width: 100%;
+    @else if $size == "medium"{
+        border-radius: 4rem;
+    }
 
-    border-radius: inherit;
+    @else if $size == "large"{
+        border-radius: 3rem;
+    }
 
-    aspect-ratio: 1 / 1;
-}
+    @else {
+        @warn "Unknown size input: #{$size}. Only 'small', 'medium', and 'large' allowed."
+    }
 
-@mixin squareBorderRadius{
-    border-radius: 3rem;
+
 }
 
 @mixin circleBorderRadius{
@@ -158,7 +187,10 @@ html{
 
                 >.menu{
                     display: none;
+                    
+                    cursor: pointer;
                 }
+
             }
 
             >.logo{
@@ -183,17 +215,23 @@ html{
             justify-content: center;
             align-items: center;
 
-            padding: 7rem 0;
+            padding: 2rem 0;
 
             >.sushi{
                 position: relative;
                 
+                margin:1rem;
                 >#pin{
+                    display: none;
+
                     position:absolute;
                     bottom:95%;
                     left:30%;
 
                     z-index: 1;
+                }
+                >#sushi-img{
+                    max-width: 100%;
                 }
 
                 >.revealhoriz{
@@ -210,18 +248,20 @@ html{
             }
             
             >.text{
-                margin: 10rem 6rem;
+                flex:1;
+                margin: 15rem 0 10rem 0;
                 text-align: center;
 
+                flex-shrink: 2;
                 >#from-kitch{
                     font-family: 'Lexend Exa', sans-serif;
-                    font-size: 3.5em;
+                    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
                     color: white;
                 }
                 
                 >#to-yours{
                     font-family: 'Lemon', sans-serif;
-                    font-size: 3.5em;
+                    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
                     color: #662C00;
                 }
 
@@ -241,14 +281,21 @@ html{
             >.sapin{
                 position: relative;
 
+                margin:1rem;
                 >#pin{
+                    display: none;
+
                     position:absolute;
                     bottom:95%;
                     left:50%;
 
                     z-index: 1;
                 }
-                
+
+                >#sapin-sapin-img{
+                    max-width: 100%;
+                }
+
                 >.revealhoriz{
                     position: relative;
                     /* lifts up the cards */
@@ -307,6 +354,10 @@ html{
                 justify-content: space-between;
 
                 >.text{
+                    >.header-one{
+                        font-weight: 300;
+                        font-size: 4rem;
+                    }
                   
                     >.paragraph{
                         margin-top: 1.5rem;
@@ -323,7 +374,6 @@ html{
             left:50%;
 
             transform: translateX(-50%);
-
             >img{
                 @include polygonImageSize();
             }
@@ -332,11 +382,11 @@ html{
 
     .section-three{
         @include outerBorder(#D37C4D);
-        @include squareBorderRadius();
+        @include squareBorderRadius("large");
 
         position: relative;
         
-        margin:20rem 0 5rem 0;
+        margin: 20rem 0 5rem 0;
         
         >.oval-design{
             position:absolute;
@@ -344,8 +394,8 @@ html{
             left:50%;
 
             >.oval-one{
-                @include oval-shape();
-
+                @include oval-shape("large");
+                
                 position: absolute;
                 top:-7rem;
 
@@ -355,7 +405,7 @@ html{
             }
 
             >.oval-two{
-                @include oval-shape();
+                @include oval-shape("large");
 
                 position: absolute;
                 top:-6rem;
@@ -368,11 +418,11 @@ html{
 
         >.container{
             @include innerBorder(#662C00);
-            @include squareBorderRadius();
+            @include squareBorderRadius("large");
 
             >.content{
                 @include dashedBorder(#D37C4D);
-                @include squareBorderRadius();
+                @include squareBorderRadius("large");
 
                 display:flex;
                 flex-direction: column;
@@ -383,26 +433,45 @@ html{
                 padding: 3rem;
               
                 font-family: "Lexend Exa", sans-serif;
-     
                 >.the-favorites{
-                
                     display: flex;
                     flex-direction: column;
                     align-items: center;
 
                     margin-top: 10rem;
 
+                    text-align: center;
                     >.dishes{
                         display: flex;
 
                         margin-top: 3rem;
 
                         >.dish-left{
-
+                            display: flex;
+                            justify-content: center;
                             >.cajun-seafood{
                                 @include outerBorder(#662C00);
-                                @include squareBorderRadius();
-                                @include bigFoodContainerSize();
+                                @include squareBorderRadius("large"); 
+
+                          
+                                .wrapper{
+                                    position: relative;
+
+                                    border-radius: inherit;
+                                    >picture{
+                                        border-radius: inherit;
+                                        >img{
+                                        
+                                            max-width: 100%;
+
+                                            border-radius: inherit;
+
+                                            aspect-ratio: 1 / 1; 
+                                        }
+                                    }
+                                }
+                                
+
                                
                             }
                         }
@@ -414,26 +483,26 @@ html{
 
                             >.lasagna, >.macaroni-salad{
                                 @include outerBorder(#662C00);
-                                @include squareBorderRadius();
-                                @include smallFoodContainerSize();
-
+                                @include squareBorderRadius("large");
+                               
                                 margin: 0rem 1rem;
+                                >.wrapper{
+                                    position:relative;
+
+                                    border-radius: inherit;
+
+                                    >img{   
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+                                        
+                                        aspect-ratio: 1 / 1;
+                                    }
+
+                                }
                                         
                             }
                         }
-
-                        >.dish-left img, >.dish-right img{
-                            @include dishImageTemplate();     
-                        }
-
-                        >.dish-left .wrapper, >.dish-right .wrapper{
-                            @include squareBorderRadius();
-
-                            position:relative;
-                        }
-                
-                        
-
                     }
                 }
 
@@ -444,7 +513,7 @@ html{
                     flex-direction: column;
                     align-items: center;
 
-
+                    text-align: center;
                     >.dishes{
                         display:flex;
 
@@ -457,44 +526,68 @@ html{
 
                             >.chocolate-chip-muffin, >.vanilla-muffin{
                                 @include outerBorder(#D37C4D);
-                                @include smallFoodContainerSize();
+                              
                                 @include circleBorderRadius();
 
+                                flex: 1;
+
                                 position: relative;         
+
+                                margin: 1rem 0rem;
+                                
+                                >.wrapper{
+                                    position:relative;
+
+                                    border-radius: inherit;
+
+                                    >img{
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+
+                                        aspect-ratio: 1 / 1;
+                                    }
+                                }
                             } 
                         }
 
                         >.dish-right{
-                        
+                            // for large screens
+                                display:flex;
+                                align-items: center;
+                                justify-content: center;
+                            //
                             >.strawberry-cheesecake{
                                 @include outerBorder(#D37C4D);
-                                @include bigFoodContainerSize();
                                 @include circleBorderRadius();
+                                >.wrapper{
+                                    position:relative;
 
-                                position: relative;  
+                                    border-radius: inherit;
+
+                                    >img{
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+
+                                        aspect-ratio: 1 / 1;
+                                    }
+                                }
                             }
                         }
 
-                        >.dish-left img, >.dish-right img{
-                            @include dishImageTemplate();
-                        }
-
-                        >.dish-left .wrapper, >.dish-right .wrapper{
-                            @include circleBorderRadius();
-
-                            position:relative;
-                        }
+                 
 
                     }
                 }
 
                 >.full-menu{
                     @include shadowTemplate();
-                    @include squareBorderRadius();
+                    @include squareBorderRadius("large");
 
                     align-self: center;
 
-                    margin: 15rem 0 5rem 0;
+                    margin: 10rem 0 5rem 0;
                     padding: 1.5rem;
                     
                     background-color: #C38134;
@@ -524,10 +617,8 @@ html{
     }
 
     .section-four{
-        align-self: center;
-
-        padding: 3rem;
         
+        align-self: center;
         >.contact-us{
             @include outerBorder(#D37C4D); 
         
@@ -562,13 +653,12 @@ html{
         }
 
         >.socials{
-            margin: 5rem 0 0 0;
 
             display:flex;
             justify-content: space-between;
 
             >img{
-                max-width: 12rem;
+                max-width: 20%;
             }
         }     
     }
@@ -631,7 +721,7 @@ html{
                     
                     transform: translateX(-50%);
                     
-                    max-width: 32rem;
+                    max-width: 30rem;
                 }
                 
 
@@ -648,7 +738,7 @@ html{
             >.sushi{
                 position: relative;
                 
-                flex:1;
+                flex-basis: 30%;
                 
                 margin:1rem;
                 >#pin{
@@ -678,18 +768,20 @@ html{
             }
             
             >.text{
-                margin: 18rem 0 10rem 0;
+                flex:1;
+                margin: 15rem 0 10rem 0;
                 text-align: center;
 
+                flex-shrink: 2;
                 >#from-kitch{
                     font-family: 'Lexend Exa', sans-serif;
-                    font-size: 3.5em;
+                    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
                     color: white;
                 }
                 
                 >#to-yours{
                     font-family: 'Lemon', sans-serif;
-                    font-size: 3.5em;
+                    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
                     color: #662C00;
                 }
 
@@ -709,7 +801,7 @@ html{
             >.sapin{
                 position: relative;
 
-                flex:1;
+                flex-basis: 30%;
 
                 margin:1rem;
                 >#pin{
@@ -819,13 +911,13 @@ html{
     }
 
     .section-three{
-        display:none;
+     
         @include outerBorder(#D37C4D);
-        @include squareBorderRadius();
+        @include squareBorderRadius("medium");
 
         position: relative;
         
-        margin:20rem 0 5rem 0;
+        margin: 15rem 0 5rem 0;
         
         >.oval-design{
             position:absolute;
@@ -833,10 +925,10 @@ html{
             left:50%;
 
             >.oval-one{
-                @include oval-shape();
-
+                @include oval-shape("medium");
+                
                 position: absolute;
-                top:-7rem;
+                top:-5rem;
 
                 transform: translateX(-50%);
                 
@@ -844,10 +936,10 @@ html{
             }
 
             >.oval-two{
-                @include oval-shape();
+                @include oval-shape("medium");
 
                 position: absolute;
-                top:-6rem;
+                top:-4rem;
 
                 transform: translateX(-50%);
                 
@@ -857,11 +949,11 @@ html{
 
         >.container{
             @include innerBorder(#662C00);
-            @include squareBorderRadius();
+            @include squareBorderRadius("medium");
 
             >.content{
                 @include dashedBorder(#D37C4D);
-                @include squareBorderRadius();
+                @include squareBorderRadius("medium");
 
                 display:flex;
                 flex-direction: column;
@@ -881,45 +973,74 @@ html{
 
                     margin-top: 10rem;
 
+                    text-align: center;
                     >.dishes{
                         display: flex;
+                        flex-direction: column;
 
                         margin-top: 3rem;
 
                         >.dish-left{
-
+                            display: flex;
+                            justify-content: center;
                             >.cajun-seafood{
                                 @include outerBorder(#662C00);
-                                @include squareBorderRadius();
-                                @include bigFoodContainerSize();
+                                @include squareBorderRadius("medium");
+                                @include bigFoodContainerSize("none");   
+                                .wrapper{
+
+                                    position: relative;
+
+                                    border-radius: inherit;
+                                    >picture{
+                                        border-radius: inherit;
+                                        >img{
+                                 
+                                            // exclusive to "medium" screens
+                                            aspect-ratio: 16 / 9;
+                                            //
+
+                                            border-radius: inherit;
+
+                                            max-width: 100%;
+                                        }
+                                    }
+                                }
+                                
+
                                
                             }
                         }
 
                         >.dish-right{
                             display:flex;
-                            flex-direction: column;
                             justify-content: space-between;
 
                             >.lasagna, >.macaroni-salad{
                                 @include outerBorder(#662C00);
-                                @include squareBorderRadius();
-                                @include smallFoodContainerSize();
+                                @include squareBorderRadius("medium");
+                               
+                                margin: 1rem .5rem;
 
-                                margin: 0rem 1rem;
+                                >.wrapper{
+                                    position:relative;
+
+                                    border-radius: inherit;
+
+                                    >img{   
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+                                        
+                                        aspect-ratio: 1 / 1;
+                                    }
+
+                                }
                                         
                             }
                         }
 
-                        >.dish-left img, >.dish-right img{
-                            @include dishImageTemplate();     
-                        }
-
-                        >.dish-left .wrapper, >.dish-right .wrapper{
-                            @include squareBorderRadius();
-
-                            position:relative;
-                        }
+                       
                 
                         
 
@@ -933,57 +1054,78 @@ html{
                     flex-direction: column;
                     align-items: center;
 
-
+                    text-align: center;
                     >.dishes{
                         display:flex;
+                        flex-direction: column;
 
                         margin-top:3rem;
 
                         >.dish-left{
                             display: flex;
-                            flex-direction: column;
                             justify-content: space-between;
 
                             >.chocolate-chip-muffin, >.vanilla-muffin{
                                 @include outerBorder(#D37C4D);
-                                @include smallFoodContainerSize();
+                              
                                 @include circleBorderRadius();
 
+                                flex: 1;
+
                                 position: relative;         
+
+                                margin: 1rem .5rem;
+                                
+                                >.wrapper{
+                                    position:relative;
+
+                                    border-radius: inherit;
+
+                                    >img{
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+
+                                        aspect-ratio: 1 / 1;
+                                    }
+                                }
                             } 
                         }
 
                         >.dish-right{
-                        
                             >.strawberry-cheesecake{
                                 @include outerBorder(#D37C4D);
-                                @include bigFoodContainerSize();
+                                @include bigFoodContainerSize("large");
                                 @include circleBorderRadius();
+                                >.wrapper{
+                                    position:relative;
 
-                                position: relative;  
+                                    border-radius: inherit;
+
+                                    >img{
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+
+                                        aspect-ratio: 1 / 1;
+                                    }
+                                }
                             }
                         }
 
-                        >.dish-left img, >.dish-right img{
-                            @include dishImageTemplate();
-                        }
-
-                        >.dish-left .wrapper, >.dish-right .wrapper{
-                            @include circleBorderRadius();
-
-                            position:relative;
-                        }
+                 
 
                     }
                 }
 
                 >.full-menu{
+                    display:none;
                     @include shadowTemplate();
-                    @include squareBorderRadius();
+                    @include squareBorderRadius("medium");
 
                     align-self: center;
 
-                    margin: 15rem 0 5rem 0;
+                    margin: 10rem 0 5rem 0;
                     padding: 1.5rem;
                     
                     background-color: #C38134;
@@ -1013,12 +1155,13 @@ html{
     }
 
     .section-four{
-        display:none;
+        
         align-self: center;
 
-        padding: 3rem;
+       
         
         >.contact-us{
+            display: none;
             @include outerBorder(#D37C4D); 
         
             >.container{
@@ -1052,13 +1195,12 @@ html{
         }
 
         >.socials{
-            margin: 5rem 0 0 0;
 
             display:flex;
             justify-content: space-between;
 
             >img{
-                max-width: 12rem;
+                max-width: 20%;
             }
         }     
     }
