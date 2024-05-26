@@ -21,6 +21,7 @@ img {
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   border-radius: inherit;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -123,7 +124,6 @@ html > body {
     flex: 1;
     margin: 15rem 0 10rem 0;
     text-align: center;
-    flex-shrink: 2;
     /* activates the javascript code */
   }
   .section-one > .content > .text > #from-kitch {
@@ -342,10 +342,12 @@ html > body {
     margin: 1rem 0rem;
   }
   .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .chocolate-chip-muffin > .wrapper, .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .vanilla-muffin > .wrapper {
+    display: flex;
     position: relative;
     border-radius: inherit;
   }
   .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .chocolate-chip-muffin > .wrapper > img, .section-three > .container > .content > .baked-goods > .dishes > .dish-left > .vanilla-muffin > .wrapper > img {
+    flex: 1;
     max-width: 100%;
     border-radius: inherit;
     aspect-ratio: 1/1;

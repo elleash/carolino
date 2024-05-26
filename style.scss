@@ -30,7 +30,7 @@
 }
 
 @mixin oval-shape($size){
-    // standard w/h: 800px 45/15rem, 480~800px: 30/13rem?
+  
     @if $size == "small"{
         // TO DO 
     }
@@ -101,6 +101,8 @@ img{
     color: #fff;
 
     border-radius: inherit;
+
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     
     opacity: 0;
     transition: opacity .5s ease;
@@ -235,10 +237,11 @@ html{
             
             >.text{
                 flex:1;
+
                 margin: 15rem 0 10rem 0;
+                
                 text-align: center;
 
-                flex-shrink: 2;
                 >#from-kitch{
                     font-family: 'Lexend Exa', sans-serif;
                     font-size: clamp(1.5rem, 3.5vw, 3.5rem);
@@ -525,11 +528,14 @@ html{
                                 margin: 1rem 0rem;
                                 
                                 >.wrapper{
+                                    display:flex;
+
                                     position:relative;
 
                                     border-radius: inherit;
-
                                     >img{
+                                        flex: 1;
+
                                         max-width: 100%;
 
                                         border-radius: inherit;
