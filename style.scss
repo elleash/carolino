@@ -32,7 +32,8 @@
 @mixin oval-shape($size){
   
     @if $size == "small"{
-        // TO DO 
+        width: 12rem;
+        height: 6rem;
     }
 
     @else if $size == "medium"{
@@ -114,7 +115,7 @@ img{
 
 .header-one{
     font-weight: 300;
-    font-size: clamp(3rem,4vw,4rem);
+    font-size: clamp(2.5rem,4vw,4rem);
 }
 
 .header-two{
@@ -131,6 +132,8 @@ html{
        
         display: flex;
         flex-direction: column;
+
+        position:relative; 
 
         background-image: url("img/paper-background.png");
         background-size: cover;
@@ -205,7 +208,7 @@ html{
             justify-content: center;
             align-items: center;
 
-            padding: 2rem 0;
+            margin: 2rem 0;
 
             >.sushi{
                 position: relative;
@@ -298,6 +301,10 @@ html{
 
             >.sushi img, >.sapin img{
                 max-width: 20rem;
+            }
+
+            >.dishes{
+                display: none;
             }
         }
     }
@@ -579,6 +586,8 @@ html{
                 >.full-menu{
                     @include shadowTemplate();
                     @include squareBorderRadius("large");
+                   
+                    display:none;
 
                     align-self: center;
 
@@ -621,6 +630,27 @@ html{
                 max-width: 20%;
             }
         }     
+    }
+
+    .chatbot-container{
+        position:fixed;
+        bottom:.5rem;
+        right:.5rem;
+
+        z-index: 1;
+
+        >iframe{
+            width:clamp(20rem, 25vw, 25rem);
+            height:clamp(20rem, 25vw, 25rem);
+        }
+
+        >button{
+            position:absolute;
+            top:.5rem;
+            right:1rem;
+
+            cursor: pointer;
+        }
     }
 }
 
@@ -693,7 +723,7 @@ html{
             justify-content: center;
             align-items: center;
 
-            padding: 2rem 0;
+            margin: 2rem 0;
 
             >.sushi{
                 position: relative;
@@ -793,6 +823,10 @@ html{
 
             >.sushi img, >.sapin img{
                 max-width: 20rem;
+            }
+
+            >.dishes{
+                display: none;
             }
         }
     }
@@ -1130,10 +1164,566 @@ html{
         }     
     }
     
+    .chatbot-container{
+        position:fixed;
+        bottom:.5rem;
+        right:.5rem;
+
+        z-index: 1;
+
+        >iframe{
+            width:clamp(17rem, 20vw, 20rem);
+            height:clamp(17rem, 20vw, 20rem);
+        }
+
+        >button{
+            position:absolute;
+            top:.7rem;
+            right:1rem;
+
+            cursor: pointer;
+        }
+    }
 }
 
 
-// TO DO
-@media (max-width:481px) {
-    // Copy-paste all sections in the SCSS written for 481-800px. Use the code from there.
+@media (max-width:480px) {
+    // html{
+    //     >body{
+    //         background-size: unset;
+    //     }
+    // }
+    .section-one{
+           
+        >.nav{
+            position: relative;
+            background-color: #662C00;
+
+            >ul{
+                display: flex;
+
+                padding-inline-start: 0;
+
+                list-style-type: none;
+
+                >*{
+                    padding: 2rem;
+
+                    color: white;
+
+                    text-decoration: none;
+
+                    transition: background-color .2s ease-in;
+
+                    >li{
+                        font-size: 1.2rem;
+                    }
+                }
+
+                >a:hover{
+                    background-color: #754119;
+                }
+
+                >#contact-us-link{
+                    margin-left: auto;
+                }
+
+                >a{
+                    display: none;
+                }
+                >.menu{
+                    display: block;
+                    
+                    cursor: pointer;
+                }
+
+            }
+
+            >.logo{
+                position: absolute;
+                top: 0;
+                left: 50%;
+             
+                >img{
+                    position: absolute;
+                    
+                    transform: translateX(-50%);
+                    
+                    max-width: 17rem;
+                }
+                
+
+            }         
+        }
+
+        >.content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            margin: 2rem 0 10rem 0;
+
+            >.sushi{
+                display: none;
+
+                position: relative;
+                
+                flex-basis: 30%;
+                
+                margin:1rem;
+                >#pin{
+                    display: none;
+
+                    position:absolute;
+                    bottom:95%;
+                    left:30%;
+
+                    z-index: 1;
+                }
+                >#sushi-img{
+                    max-width: 100%;
+                }
+
+                >.revealhoriz{
+                    position: relative;
+                    /* lifts up the cards */
+                    transform: translateX(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                .revealhoriz.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
+            
+            >.text{
+                margin: 4rem 0 2rem 0;
+
+                text-align: center;
+                >#from-kitch{
+                    font-family: 'Lexend Exa', sans-serif;
+                    font-size: clamp(3rem, 5vw, 3.5rem);
+                    color: white;
+                }
+                
+                >#to-yours{
+                    font-family: 'Lemon', sans-serif;
+                    font-size: clamp(3rem, 5vw, 3.5rem);
+                    color: #662C00;
+                }
+
+                >.revealvert{
+                    position: relative;
+                    transform: translateY(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                /* activates the javascript code */
+                .revealvert.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
+ 
+            >.sapin{
+                display: none;
+                
+                position: relative;
+
+                flex-basis: 30%;
+
+                margin:1rem;
+                >#pin{
+                    display: none;
+
+                    position:absolute;
+                    bottom:95%;
+                    left:50%;
+
+                    z-index: 1;
+                }
+
+                >#sapin-sapin-img{
+                    max-width: 100%;
+                }
+
+                >.revealhoriz{
+                    position: relative;
+                    /* lifts up the cards */
+                    transform: translateX(-180px);
+                    opacity: 0;
+                    transition: all 2s ease;
+                }
+                .revealhoriz.show{
+                    transform: translateY(0px);
+                    opacity: 1;
+                }    
+            }
+
+            >.sushi img, >.sapin img{
+                max-width: 20rem;
+            }
+
+            >.dishes{
+                display:flex;
+                justify-content: center;
+
+                >img{
+                    max-width: 40%;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    .section-two{
+      
+        @include outerBorder(#FA9A68);
+
+        position:relative;
+        
+        >#polygon-up{
+            position:absolute;
+            bottom:100%;
+            left:50%;
+            transform: translateX(-50%);
+
+            >img{
+                @include polygonImageSize();
+            }
+        }
+
+        >.container{
+            @include shadowTemplate();
+            @include innerBorder(#662C00);
+
+            position: relative;
+            
+            display:flex;
+            
+            z-index: 1;
+
+            >.content{
+                @include dashedBorder(#FA9A68);
+
+                flex:1;
+                display:flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                // top, left, bottom, right
+                padding: 3rem 1.5rem;
+                
+                background-color: #F3E9D2;
+                
+                text-align: center;
+                >.text{
+                    >.header-one{
+                        font-size: clamp(1.3rem,1.5vw,1.5rem);
+                    }
+                  
+                    >.paragraph{
+                        margin-top: 1.5rem;
+                    }
+                }
+
+                >.image{
+                    display: flex;
+                    align-items: center;
+                    >img{
+                        padding: 1rem;
+                        max-width: 100%;
+                        
+                        aspect-ratio: 16 / 9;
+                    }
+                }
+            }
+        }
+
+        >#polygon-down{
+            position:absolute;
+            top:100%;
+            left:50%;
+
+            transform: translateX(-50%);
+
+            >img{
+                @include polygonImageSize();
+            }
+        }
+    }
+
+    .section-three{
+     
+        @include outerBorder(#D37C4D);
+        @include squareBorderRadius("medium");
+
+        position: relative;
+        
+        margin: 12rem 0 3rem 0;
+        
+        >.oval-design{
+            position:absolute;
+            top:0;
+            left:50%;
+
+            >.oval-one{
+                @include oval-shape("small");
+                
+                position: absolute;
+                top:-2.5rem;
+
+                transform: translateX(-50%);
+                
+                background-color: #C57243;
+            }
+
+            >.oval-two{
+                @include oval-shape("small");
+
+                position: absolute;
+                top:-2rem;
+
+                transform: translateX(-50%);
+                
+                background-color: #662C00;
+            }
+        }
+
+        >.container{
+            @include innerBorder(#662C00);
+            @include squareBorderRadius("medium");
+
+            >.content{
+                @include dashedBorder(#D37C4D);
+                @include squareBorderRadius("medium");
+
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+
+                background-color: #F3E9D2;
+
+                padding: 2rem;
+              
+                font-family: "Lexend Exa", sans-serif;
+     
+                >.the-favorites{
+                
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    margin-top: 5rem;
+
+                    text-align: center;
+                    >.dishes{
+                        display: flex;
+                        flex-direction: column;
+
+                        margin-top: 2rem;
+
+                        >.dish-left{
+                            display: flex;
+                            justify-content: center;
+                            >.cajun-seafood{
+                                @include outerBorder(#662C00);
+                                @include squareBorderRadius("medium");
+
+                                margin: 1rem 0;
+                                .wrapper{
+
+                                    position: relative;
+
+                                    border-radius: inherit;
+                                    >picture{
+                                        border-radius: inherit;
+                                        >img{
+                                            aspect-ratio: 1 / 1;
+                                        
+
+                                            border-radius: inherit;
+
+                                            max-width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        >.dish-right{
+                            display:flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            
+                            >.lasagna, >.macaroni-salad{
+                                @include outerBorder(#662C00);
+                                @include squareBorderRadius("large");
+                               
+                                margin: 1rem 0;
+
+                                >.wrapper{
+                                    position:relative;
+
+                                    border-radius: inherit;
+
+                                    >img{   
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+                                        
+                                        aspect-ratio: 1 / 1;
+                                    }
+
+                                }
+                                        
+                            }
+                        }
+                    }
+                }
+
+                >.baked-goods{
+                    margin-top: 4rem;
+               
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    text-align: center;
+                    >.dishes{
+                        display:flex;
+                        flex-direction: column;
+
+                        margin-top:2rem;
+
+                        >.dish-left{
+                            display: flex;
+                            flex-direction: column;
+                            >.chocolate-chip-muffin, >.vanilla-muffin{
+                                @include outerBorder(#D37C4D);
+                              
+                                @include circleBorderRadius();
+
+                                flex: 1;
+
+                                position: relative;         
+
+                                margin: 1rem 0rem;
+                                
+                                >.wrapper{
+                                    position:relative;
+
+                                    border-radius: inherit;
+
+                                    >img{
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+
+                                        aspect-ratio: 1 / 1;
+                                    }
+                                }
+                            } 
+                        }
+
+                        >.dish-right{
+                            display: flex;
+                            justify-content: center;
+                            >.strawberry-cheesecake{
+                                @include outerBorder(#D37C4D);
+                                @include circleBorderRadius();
+
+                                margin: 1rem 0rem;
+                                >.wrapper{
+                                    position:relative;
+
+                                    border-radius: inherit;
+
+                                    >img{
+                                        max-width: 100%;
+
+                                        border-radius: inherit;
+
+                                        aspect-ratio: 1 / 1;
+                                    }
+                                }
+                            }
+                        }
+
+                 
+
+                    }
+                }
+
+                >.full-menu{
+                    display:none;
+                    @include shadowTemplate();
+                    @include squareBorderRadius("medium");
+
+                    align-self: center;
+
+                    margin: 10rem 0 5rem 0;
+                    padding: 1.5rem;
+                    
+                    background-color: #C38134;
+                    
+                    cursor: pointer;
+
+                    >.content{
+                        display:flex;
+                        flex-direction: column;
+                        
+                        align-items: center;
+
+                        padding: 1rem 2rem;
+
+                        border-radius: 2rem;
+                        background-color: #C98B42;
+                        
+                        color: #fff;
+
+                        >p{
+                            padding: .7rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .section-four{
+        align-self: center;
+        >.socials{
+
+            display:flex;
+            justify-content: space-between;
+
+            >img{
+                max-width: 20%;
+            }
+        }     
+    }
+    
+    .chatbot-container{
+        position:fixed;
+        bottom:.5rem;
+        right:.5rem;
+
+        z-index: 1;
+
+        >iframe{
+            width:clamp(16rem, 20vw, 20rem);
+            height:clamp(16rem, 20vw, 20rem);
+        }
+
+        >button{
+            position:absolute;
+            top:.7rem;
+            right:.5rem;
+
+            cursor: pointer;
+        }
+    }
 }

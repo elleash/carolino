@@ -43,3 +43,25 @@ function revealvert(){
         }
     }
 }
+
+// This is for the chatbot's minimize/maximise feature
+const chatbotButton = document.getElementById("chatbot-button");
+
+
+chatbotButton.addEventListener("click", ()=>{
+    const chatbotItself = document.querySelector(".chatbot-itself");
+   
+    if (chatbotButton.textContent === "-"){
+        chatbotItself.style.display = "none";
+        chatbotButton.textContent = "+";
+        chatbotButton.style.top = "-1rem";
+
+    }
+
+    else{
+        chatbotItself.style.display = "block";
+        chatbotButton.textContent = "-";
+        chatbotButton.style.top = ".5rem";
+    }
+    
+})
