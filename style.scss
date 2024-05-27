@@ -55,11 +55,8 @@
 
 
 @mixin squareBorderRadius($size){
-    @if $size == "small"{
-        border-radius: 5rem;
-    }
 
-    @else if $size == "medium"{
+    @if $size == "medium"{
         border-radius: 4rem;
     }
 
@@ -68,7 +65,7 @@
     }
 
     @else {
-        @warn "Unknown size input: #{$size}. Only 'small', 'medium', and 'large' allowed."
+        @warn "Unknown size input: #{$size}. Only 'medium', and 'large' allowed."
     }
 
 
