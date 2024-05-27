@@ -129,12 +129,12 @@ html > body {
   }
   .section-one > .content > .text > #from-kitch {
     font-family: "Lexend Exa", sans-serif;
-    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+    font-size: clamp(3rem, 4vw, 3.5rem);
     color: white;
   }
   .section-one > .content > .text > #to-yours {
     font-family: "Lemon", sans-serif;
-    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+    font-size: clamp(3rem, 4vw, 3.5rem);
     color: #662C00;
   }
   .section-one > .content > .text > .revealvert {
@@ -208,12 +208,12 @@ html > body {
     justify-content: space-between;
   }
   .section-two > .container > .content > .text > .paragraph {
-    margin-top: 1.5rem;
+    margin-top: 4rem;
     max-width: 35rem;
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-size: clamp(1rem, 2.2vw, 2.5rem);
   }
   .section-two > .container > .content > .image > img {
-    max-width: 45vw;
+    max-width: 35vw;
   }
   .section-two > #polygon-down {
     position: absolute;
