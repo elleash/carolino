@@ -65,3 +65,16 @@ chatbotButton.addEventListener("click", ()=>{
     }
     
 })
+
+var images = ["img/section-two/aboutPot.png", "img/section-two/aboutPot2.png"]
+var index = 0;
+
+setInterval (function(){
+
+  document.getElementById("pot").src = images[index];
+  index++;
+
+  if (index == images.length) {
+    index = 0;
+  }
+}, 1000);
