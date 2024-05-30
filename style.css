@@ -8,6 +8,7 @@
 
 img {
   display: block;
+  max-width: 10rem;
 }
 
 .overlay {
@@ -486,9 +487,6 @@ html > body {
     justify-content: center;
     margin: 5% 5%;
   }
-  .section-four > .socials > img {
-    max-width: 10%;
-  }
   .section-four > .socials > .socmed {
     transition: 0.5s;
   }
@@ -912,8 +910,8 @@ html > body {
     justify-content: center;
     margin: 5% 5%;
   }
-  .section-four .section-four > .socials > img {
-    max-width: 10%;
+  .section-four .section-four > .socials > .socmed {
+    transition: 0.5s;
   }
   .section-four .section-four > .socials > .socmed-middle {
     margin-left: 4em;
@@ -1318,12 +1316,9 @@ html > body {
     justify-content: center;
     margin: 5% 5%;
   }
-  .section-four .section-four > .socials > img {
-    max-width: 10%;
-  }
   .section-four .section-four > .socials > .socmed-middle {
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-top: 10rem;
+    margin-bottom: 4rem;
   }
   .chatbot-container {
     position: fixed;

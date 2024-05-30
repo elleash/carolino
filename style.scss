@@ -82,6 +82,7 @@
 
 img{
     display:block;
+    max-width: 10rem;
 }
 
 .overlay{
@@ -721,10 +722,6 @@ html{
             justify-content: center;
             margin: 5% 5%;
 
-            >img{
-                max-width: 10%;
-            }
-
             >.socmed{
                 transition: 0.5s;
             }
@@ -1300,9 +1297,9 @@ html{
                 display:flex;
                 justify-content: center;
                 margin: 5% 5%;
-    
-                >img{
-                    max-width: 10%;
+                
+                >.socmed{
+                    transition: 0.5s;
                 }
                 
                 >.socmed-middle{
@@ -1859,14 +1856,10 @@ html{
                 display:flex;
                 justify-content: center;
                 margin: 5% 5%;
-    
-                >img{
-                    max-width: 10%;
-                }
                 
                 >.socmed-middle{
-                    margin-left: 4em;
-                    margin-right: 4em;
+                    margin-top: 10rem;
+                    margin-bottom: 4rem;
                 }
             }     
         } 
